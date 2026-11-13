@@ -1,0 +1,41 @@
+/* Keep both weeks aligned Monday–Sunday at every screen width. */
+.study-plan-calendar{margin-bottom:24px}
+.plan-week{min-width:0;margin-bottom:20px}
+.plan-week-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.plan-week-heading h3{font-size:14px;font-weight:750;color:#284655}
+.plan-week-heading>span{font-size:12px;color:#647789}
+.study-plan-calendar .calendar-grid{grid-template-columns:repeat(7,minmax(0,1fr));margin-bottom:0}
+.plan-mobile-detail,.plan-daily-note{display:none}
+.study-plan-calendar .calendar-day:focus-visible{outline:2px solid #28695b;outline-offset:2px}
+@media(max-width:980px){
+ .plan-daily-note{display:flex;flex-wrap:wrap;gap:4px 10px;margin:0 0 18px;font-size:12px;line-height:1.7;color:#536779}
+ .plan-daily-note strong{font-weight:650;color:#284655}
+ .plan-daily-note>span{flex-basis:100%;font-size:12px;color:#647789}
+ .plan-week{padding:16px;background:#f3f6f8;border:1px solid #e2e9ef;border-radius:14px;margin-bottom:14px}
+ .plan-week-heading{margin-bottom:14px}
+ .study-plan-calendar .calendar-grid{gap:6px}
+ .study-plan-calendar .calendar-day{min-width:0;min-height:116px;padding:10px 4px;border-radius:9px;align-items:center;text-align:center}
+ .study-plan-calendar .plan-desktop-detail{display:none}
+ .study-plan-calendar .plan-mobile-detail{display:block}
+ .study-plan-calendar .day-label{display:flex;flex-direction:column;align-items:center;gap:4px;position:relative;margin:0 0 8px;min-height:45px;width:100%}
+ .study-plan-calendar .day-label>span{font-size:11px;line-height:1.3;color:#687a8b}
+ .study-plan-calendar .day-label strong{font-size:18px;line-height:1.2}
+ .study-plan-calendar .day-label small{position:absolute;top:48px;margin:0;font-size:9px;line-height:1.3;color:#28695b}
+ .study-plan-calendar .calendar-day.today .day-label{margin-bottom:20px}
+ .study-plan-calendar .calendar-zoom{font-size:10px;line-height:1.4;padding:3px 4px;margin:0 0 4px;white-space:nowrap}
+ .study-plan-calendar .plan-task-summary{font-size:10px;line-height:1.5;color:#586e80;margin-top:auto;white-space:nowrap}
+ .study-plan-calendar .calendar-day.selected{background:#e6f3ee;border-color:#397e69;box-shadow:0 0 0 1px #397e69}
+ .study-plan-calendar .calendar-day.selected .day-label strong{color:#215c4b}
+ .study-plan-calendar .calendar-day.today:not(.selected){border-color:#5e9986}
+}
+@media(max-width:480px){
+ .plan-week{padding:13px 8px}
+ .plan-week-heading{padding:0 4px;gap:8px}
+ .plan-week-heading h3{font-size:13px}
+ .plan-week-heading>span{font-size:11px}
+ .study-plan-calendar .calendar-grid{gap:4px}
+ .study-plan-calendar .calendar-day{min-height:112px;padding:9px 2px}
+ .study-plan-calendar .day-label strong{font-size:17px}
+ .study-plan-calendar .calendar-zoom{font-size:10px;padding:2px 3px}
+ .study-plan-calendar .plan-task-summary{font-size:10px}
+}
