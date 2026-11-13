@@ -35,3 +35,11 @@ test('등록 전 학생은 주소로 정규 학습 메뉴를 열 수 없다',()=
  for(const tab of ['books','plan','growth','questions'])assert.equal(resolveClassroomNavigation(viewer('student'),trial,'student',tab).tab,'today');
  assert.equal(resolveClassroomNavigation(viewer('student'),trial,'student','result').tab,'result');
 });
+
+test('공통 레이아웃은 URL에서 메뉴·학생·추천 친구를 복원한다',async()=>{
+ const {classroomLocation}=await import('../app/lib/classroom-navigation.ts');
+ assert.deepEqual(classroomLocation('/classroom/student/study-plan',new URLSearchParams('studentId=sample-2&friend=orca')),{mode:'student',tab:'plan',studentId:'sample-2',friend:'orca'});
+ assert.deepEqual(classroomLocation('/classroom',new URLSearchParams('view=survey&friend=turtle')),{mode:undefined,tab:'survey',studentId:'',friend:'turtle'});
+ assert.equal(classroomLocation('/classroom/admin/unknown',new URLSearchParams()),null);
+ assert.equal(classroomLocation('/login',new URLSearchParams()),null);
+});

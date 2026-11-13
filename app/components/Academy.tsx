@@ -1,6 +1,7 @@
 'use client';
 import Leads from './Leads';
 import LearningNavigation from './LearningNavigation';
+import {createClassroomStateLoader,ClassroomStateError,type ClassroomData} from '../lib/classroom-state-client';
 import {useRouter} from 'next/navigation';
 import {availableClassroomTabs,classroomPath,resolveClassroomNavigation,type ClassroomMode} from '../lib/classroom-navigation';
 import './student-sidebar.css';
@@ -35,7 +36,7 @@ import {companionStatus,type Species} from '../lib/companions';
 import CompanionRecommendation from './CompanionRecommendation';
 import DiagnosticReport,{ReportGuidanceEditor} from './DiagnosticReport';
 import {buildDiagnosticReport,reportReady} from '../lib/diagnostic-report';
-type Data={workspace:Workspace;viewer:Viewer;revision:number};
+type Data=ClassroomData;
 type Act=(body:Record<string,unknown>)=>Promise<any>;
 const icons={hall:GraduationCap,guide:BookOpen,books:BookOpen,reminders:MessageCircle,leads:Users,sales:TrendingUp,members:Users,settlement:TrendingUp,today:LayoutDashboard,plan:CalendarDays,result:Target,survey:ClipboardCheck,growth:Sparkles,questions:MessageCircle,finance:TrendingUp,overview:LayoutDashboard,submissions:ClipboardCheck,students:Users,assessments:GraduationCap,materials:BookOpen};
 const studentTabs=[['hall','명예의 전당'],['guide','이용 가이드'],['books','내 교재·추가 연습'],['today','오늘 할 일'],['plan','2주 학습표'],['questions','질문게시판'],['result','나의 진단 결과'],['survey','진단검사'],['growth','나의 성장']];
@@ -50,9 +51,24 @@ function fileHref(f:Attachment){return '/api/file?key='+encodeURIComponent(f.key
 export default function Academy({signedInName,initialTab='today',initialMode,initialCompanion=null,initialStudentId=''}:{signedInName:string;initialTab?:string;initialMode?:ClassroomMode;initialCompanion?:Species|null;initialStudentId?:string}){
  const router=useRouter();
  const [data,setData]=useState<Data|null>(null),[error,setError]=useState(''),[mode,setMode]=useState<ClassroomMode>(initialMode??'student'),[tab,setTab]=useState(initialTab),[selected,setSelected]=useState(initialStudentId),[toast,setToast]=useState(''),[busy,setBusy]=useState(false),[mobileMenu,setMobileMenu]=useState(false),[taskModal,setTaskModal]=useState<{studentId:string;task:Task}|null>(null),[addModal,setAddModal]=useState(false),[inviteModal,setInviteModal]=useState(false),[materialModal,setMaterialModal]=useState<Theme|null>(null);
+ const [stateLoader]=useState(()=>createClassroomStateLoader());
  const diagnosticSave=useRef<{save:()=>Promise<boolean>}|null>(null);
- const load=useCallback(async()=>{try{const r=await fetch('/api/state',{cache:'no-store'}),p=await r.json() as Data&{error?:string};if(!r.ok)throw new Error(p.error);setData(p);setError('');setSelected(prev=>p.workspace.students.some((s:Student)=>s.id===prev)?prev:(p.viewer.studentId??p.workspace.students[0]?.id??''));}catch(e){setError(e instanceof Error?e.message:'연결을 확인해 주세요.');}},[]);
- useEffect(()=>{load();const timer=setInterval(load,15000),refresh=()=>{if(document.visibilityState==='visible')load();};window.addEventListener('focus',refresh);document.addEventListener('visibilitychange',refresh);return()=>{clearInterval(timer);window.removeEventListener('focus',refresh);document.removeEventListener('visibilitychange',refresh);};},[load]);
+ const load=useCallback(async()=>{try{
+  const next=await stateLoader.load();
+  setData(current=>current&&current.revision>next.revision?current:next);setError('');
+  setSelected(prev=>next.workspace.students.some(s=>s.id===prev)?prev:(next.viewer.studentId??next.workspace.students[0]?.id??''));
+ }catch(e){
+  if(e instanceof Error&&e.name==='AbortError')return;
+  if(e instanceof ClassroomStateError&&(e.status===401||e.status===403))setData(null);
+  setError(e instanceof Error?e.message:'연결을 확인해 주세요.');
+ }},[stateLoader]);
+ useEffect(()=>{
+  void load();
+  const refresh=()=>{if(document.visibilityState==='visible')void load();};
+  const timer=setInterval(refresh,15000);
+  window.addEventListener('focus',refresh);document.addEventListener('visibilitychange',refresh);
+  return()=>{clearInterval(timer);window.removeEventListener('focus',refresh);document.removeEventListener('visibilitychange',refresh);stateLoader.abort();};
+ },[load,stateLoader]);
  useEffect(()=>{if(toast){const t=setTimeout(()=>setToast(''),3500);return()=>clearTimeout(t);}},[toast]);
  useEffect(()=>{if(!mobileMenu)return;const mobile=window.matchMedia('(max-width: 760px)'),closeOnEscape=(e:KeyboardEvent)=>{if(e.key==='Escape')setMobileMenu(false);},closeOnDesktop=()=>{if(!mobile.matches)setMobileMenu(false);};document.addEventListener('keydown',closeOnEscape);mobile.addEventListener('change',closeOnDesktop);closeOnDesktop();return()=>{document.removeEventListener('keydown',closeOnEscape);mobile.removeEventListener('change',closeOnDesktop);};},[mobileMenu]);
  const act:Act=async body=>{if(data?.viewer.role==='parent'||mode==='parent')throw new Error('학부모 보기에서는 기록을 변경할 수 없습니다.');setBusy(true);try{const r=await fetch('/api/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),p=await r.json() as Data&{error?:string;late?:boolean};if(!r.ok)throw new Error(p.error);if(p.workspace)setData(p);if(!body.quiet)setToast(p.late?'지각 제출로 보관했습니다. 성사율에는 반영되지 않습니다.':body.action==='review'?'확인 결과와 다음 진도가 반영됐습니다.':body.action==='submit'?'제출했습니다. 조교 확인을 기다려 주세요.':'저장했습니다.');return p;}catch(e){const message=e instanceof Error?e.message:'저장하지 못했습니다.';setToast(message);throw e;}finally{setBusy(false);}};

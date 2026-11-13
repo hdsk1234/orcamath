@@ -49,3 +49,13 @@ export function resolveClassroomNavigation(viewer:Viewer,student:Student|undefin
  const tab=allowed.includes(requestedTab)?requestedTab:mode==='admin'?'overview':'today';
  return {mode,tab};
 }
+
+/** Read routes in the persistent client shell, including legacy diagnostic links. */
+export function classroomLocation(pathname:string,search:{get:(key:string)=>string|null}){
+ const parts=pathname.split('/').filter(Boolean);
+ if(parts[0]!=='classroom')return null;
+ const route=parts.length===1?null:parseClassroomRoute(parts.slice(1));
+ if(parts.length>1&&!route)return null;
+ const view=search.get('view');
+ return {mode:route?.mode,tab:route?.tab??(view==='survey'?'survey':view==='result'?'result':'today'),studentId:search.get('studentId')??'',friend:search.get('friend')};
+}
