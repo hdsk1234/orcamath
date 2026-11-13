@@ -1,0 +1,29 @@
+{
+  "groups": {
+    "brand": {
+      "count": 1,
+      "originalBytes": 19774,
+      "fullBytes": 19774,
+      "thumbnailBytes": 6278
+    },
+    "companions": {
+      "count": 120,
+      "originalBytes": 5797632,
+      "fullBytes": 5797632,
+      "thumbnailBytes": 4529662
+    },
+    "diagnostic": {
+      "count": 111,
+      "originalBytes": 1700636,
+      "fullBytes": 584772,
+      "thumbnailBytes": 0
+    },
+    "guide": {
+      "count": 5,
+      "originalBytes": 2592804,
+      "fullBytes": 1302991,
+      "thumbnailBytes": 396166
+    }
+  },
+  "losslessVerified": 111
+}

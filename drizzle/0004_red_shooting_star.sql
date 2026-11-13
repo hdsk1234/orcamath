@@ -1,0 +1,1 @@
+ALTER TABLE `registrations` ADD `privacy_consent_at` text;

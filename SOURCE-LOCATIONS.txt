@@ -1,0 +1,11 @@
+ORCA full source export
+Frontend: orca-continuation/app/components, app/*/page.tsx, components, public
+Server API: orca-continuation/app/api
+Server auth and services: orca-continuation/app/lib/server.ts, social-auth.ts, login-identities.ts
+Shared business rules: orca-continuation/app/lib
+Database schema: orca-continuation/db
+Database migrations: orca-continuation/drizzle
+Includes images, tests, scripts, dependency lockfile, and hosting configuration.
+Excluded: environment secrets, installed dependencies, build output, local databases, and Git history.
+This is source code, not a production database or uploaded-file backup.
+See orca-continuation/README.md and LOGIN-OPERATIONS.md for setup notes.

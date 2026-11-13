@@ -1,0 +1,19 @@
+'use client';
+import {imageSrcSet} from '../lib/images';
+import {useEffect,useState} from 'react';
+import {ArrowRight,Check,ChevronDown,Sparkles} from 'lucide-react';
+import {SPECIES,companionImage,type Species} from '../lib/companions';
+import {COMPANION_PREFERENCE_KEY,companionDiagnosisPath,preferenceSpecies} from '../lib/companion-recommendation';
+import {CompanionSprite} from './Companion';
+
+export default function LandingCompanions({signedIn}:{signedIn:boolean}){
+ const [selected,setSelected]=useState<Species|null>(null);
+ useEffect(()=>{try{setSelected(preferenceSpecies(localStorage.getItem(COMPANION_PREFERENCE_KEY)));}catch{}},[]);
+ const choose=(species:Species)=>{setSelected(species);try{localStorage.setItem(COMPANION_PREFERENCE_KEY,JSON.stringify({species,at:Date.now()}));}catch{}};
+ const friend=SPECIES.find(s=>s.id===selected),path=companionDiagnosisPath(selected),diagnosis=signedIn?path:'/consult';
+ return <>
+ <section className="landing-wrap ocean-hero" aria-labelledby="ocean-title"><div className="ocean-copy"><span className="landing-kicker"><i/>작은 시작, 함께 자라는 실력</span><h1 id="ocean-title">너의 수학 실력과 함께<br/><span>성장할 친구</span>를 골라봐.</h1><p>처음에는 작고 귀여운 친구들이지만,<br className="ocean-desktop-break"/> 네가 공부하고 도전할수록 함께 성장해.<br className="ocean-desktop-break"/> 진단검사를 마치면 지금 너에게 어울리는 친구를 추천해 줄게.</p><div className="ocean-actions"><a className="landing-primary" href={diagnosis} target="_top">진단검사로 친구 추천받기<ArrowRight size={18}/></a><a className="landing-text-link" href="#companions">다섯 친구 만나보기<ChevronDown size={17}/></a></div><span className="ocean-login-note">{signedIn?'진단 결과와 함께 친구를 직접 선택할 수 있어.':'상담 신청 후 수업 방식에 맞춰 진단을 진행해. 친구는 먼저 골라볼 수 있어.'}</span></div>
+ <div className="ocean-scene" aria-label="함께 성장할 다섯 친구의 Lv.1 활력 모습"><span className="ocean-scene-top"><Sparkles size={15}/>다섯 친구의 첫 모습 · Lv.1</span><div className="ocean-friends">{SPECIES.map(s=><figure className={'ocean-friend species-'+s.id} key={s.id}><CompanionSprite species={s.id} level={1} state={0}/><figcaption>{s.nickname}<span>{s.name}</span></figcaption></figure>)}</div><p className="ocean-scene-bottom">오늘의 작은 완성이, 함께 성장하는 힘이 돼.</p><span className="ocean-bubble bubble-one"/><span className="ocean-bubble bubble-two"/></div></section>
+ <section className="landing-wrap ocean-selection" id="companions" aria-labelledby="companions-title"><div className="ocean-selection-heading"><div><span className="landing-eyebrow">MEET YOUR OCEAN FRIEND</span><h2 id="companions-title">어떤 친구와 함께 시작할까?</h2></div><p>마음에 드는 친구를 골라봐.<br/>진단 추천을 보고 다시 골라도 괜찮아.</p></div><div className="ocean-cards">{SPECIES.map(s=><article className={'ocean-card species-'+s.id+(selected===s.id?' is-selected':'')} key={s.id}><div className="ocean-card-art"><span>Lv.1</span><img src={companionImage(s.id,1,0)} srcSet={imageSrcSet(companionImage(s.id,1,0))} sizes="(max-width: 600px) 45vw, (max-width: 1000px) 30vw, 220px" decoding="async" alt={`${s.nickname} · ${s.name}의 Lv.1 활력 모습`} loading="lazy" width={480} height={480}/></div><div className="ocean-card-copy"><div className="ocean-card-name"><h3>{s.nickname}</h3><span>{s.name}</span></div><span className="ocean-card-goal">{s.goal}</span><p>{s.description}</p><button type="button" aria-label={`${s.nickname} 선택`} aria-pressed={selected===s.id} onClick={()=>choose(s.id)}>{selected===s.id?<><Check size={16}/>내가 고른 친구</>:<>이 친구가 좋아요<ArrowRight size={15}/></>}</button></div></article>)}</div><div className="ocean-choice-note" role="status" aria-live="polite"><Sparkles size={20}/><div>{friend?<><strong>{friend.nickname}가 마음에 들었구나!</strong><p>첫 화면의 선택을 기억해 둘게. 진단 결과에서 이 친구로 최종 선택할 수 있어.</p></>:<><strong>아직 못 골라도 괜찮아.</strong><p>진단검사를 마치면 응답에서 확인한 학습 목표에 어울리는 친구를 추천해 줄게.</p></>}</div><a href={diagnosis} target="_top">진단검사 시작<ArrowRight size={16}/></a></div><p className="ocean-equal-note">모든 친구의 경험치와 성장 조건은 같아. 어떤 친구든 너와 함께 성장할 수 있어.</p></section>
+ </>;
+}

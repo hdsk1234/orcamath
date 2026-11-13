@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {seedWorkspace,canAccessStudent,visibleWorkspace,isStaffRole,canWriteRecords} from '../app/lib/domain.ts';
+import {installBillingExamples} from '../app/lib/billing.ts';
+const viewer=(role,studentId='sample-1')=>({role,studentId,userId:'test',name:'가상 학부모'});
+test('학부모는 연결된 자녀만 접근하며 연결이 없는 계정은 모든 학생을 거부한다',()=>{assert.equal(canAccessStudent(viewer('parent'),'sample-1'),true);assert.equal(canAccessStudent(viewer('parent'),'sample-2'),false);assert.equal(canAccessStudent(viewer('parent',null),'sample-1'),false);assert.equal(canAccessStudent(viewer('unknown'),'sample-1'),false);});
+test('학부모 화면의 과제·진도·평가·수강료는 동일 학생 화면과 일치한다',()=>{const w=seedWorkspace('2026-10-12');installBillingExamples(w,'2026-10-12');w.consultations=[{id:'a',studentId:'sample-1',note:'자녀 상담',createdAt:'2026-10-12',status:'접수'},{id:'b',studentId:'sample-2',note:'다른 학생 상담',createdAt:'2026-10-12',status:'접수'}];const parent=visibleWorkspace(w,viewer('parent')),student=visibleWorkspace(w,viewer('student'));assert.deepEqual(parent,student);assert.equal(parent.students.length,1);assert.equal(parent.consultations.length,1);assert.equal(parent.students[0].billing.paidOut,undefined);assert.equal(parent.students[0].billing.settlementAmount,undefined);});
+test('학부모는 교직원 권한과 기록 쓰기 권한을 받지 않는다',()=>{assert.equal(isStaffRole('parent'),false);assert.equal(canWriteRecords('parent'),false);assert.equal(canWriteRecords('student'),true);for(const role of ['admin','teacher','assistant'])assert.equal(canWriteRecords(role),true);assert.equal(canWriteRecords('unknown'),false);});
