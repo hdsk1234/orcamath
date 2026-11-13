@@ -1,0 +1,4 @@
+# The introduction can be fetched so crawlers can read its noindex metadata.
+User-agent: *
+Disallow: /classroom
+Disallow: /api/

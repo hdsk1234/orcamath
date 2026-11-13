@@ -1,0 +1,18 @@
+.mobile-menu-backdrop{display:none}
+@media(max-width:760px){
+ .mobile-menu-backdrop{
+  display:block;
+  position:fixed;
+  inset:0 0 0 232px;
+  width:calc(100% - 232px);
+  height:100%;
+  z-index:29;
+  margin:0;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:rgb(15 29 49 / 28%);
+  cursor:pointer;
+  touch-action:manipulation;
+ }
+}

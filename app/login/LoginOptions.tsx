@@ -1,0 +1,13 @@
+'use client';
+import {useState} from 'react';
+import type {LoginProvider} from '../lib/login-policy';
+export default function LoginOptions({providers,returnTo,connect}:{providers:{id:LoginProvider;name:string;ready:boolean;review?:boolean}[];returnTo:string;connect:boolean}){
+ const [busy,setBusy]=useState(''),[error,setError]=useState('');
+ const start=async(provider:LoginProvider)=>{setBusy(provider);setError('');try{
+  if(connect){const r=await fetch('/api/login/link',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({provider})}),p=await r.json() as {error?:string};if(!r.ok)throw Error(p.error??'기존 계정을 확인해 주세요.');}
+  const r=await fetch('/api/auth/csrf',{cache:'no-store'}),p=await r.json() as {csrfToken?:string};if(!r.ok||!p.csrfToken)throw Error('로그인을 준비하지 못했어요. 다시 시도해 주세요.');
+  const form=document.createElement('form');form.method='POST';form.action='/api/auth/signin/'+provider;form.target='_top';
+  for(const [name,value] of Object.entries({csrfToken:p.csrfToken,callbackUrl:returnTo})){const input=document.createElement('input');input.type='hidden';input.name=name;input.value=value;form.appendChild(input);}document.body.appendChild(form);form.submit();
+ }catch(e){setError(e instanceof Error?e.message:'다시 시도해 주세요.');setBusy('');}};
+ return <div className="login-options">{providers.map(p=><button key={p.id} type="button" className={'provider-button '+p.id} disabled={!p.ready||!!busy} onClick={()=>start(p.id)}><span className="provider-symbol" aria-hidden="true">{p.id==='google'?<svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6C44.4 38.06 46.98 31.9 46.98 24.55Z"/><path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.77 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.53 2.56 10.78l7.97-6.19Z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6C30.03 37.65 27.26 38.5 24 38.5c-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z"/></svg>:p.id==='kakao'?<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.48 3 2 6.44 2 10.68c0 2.65 1.76 4.99 4.44 6.38l-1.12 4.1c-.1.36.3.65.6.45l4.78-3.17c.43.04.86.06 1.3.06 5.52 0 10-3.44 10-7.68S17.52 3 12 3Z"/></svg>:<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h6l6 9V3h6v18h-6l-6-9v9H3Z"/></svg>}</span><span>{busy===p.id?'연결 중…':p.name+(connect?' 계정 연결':'로 시작하기')}</span>{!p.ready&&<small>{p.review?'승인 대기':'준비 중'}</small>}</button>)}{error&&<p role="alert" className="login-error">{error}</p>}</div>;
+}

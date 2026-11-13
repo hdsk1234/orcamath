@@ -1,0 +1,25 @@
+{
+  "species": [
+    "orca",
+    "shark",
+    "turtle",
+    "seahorse",
+    "octopus"
+  ],
+  "levels": [
+    1,
+    5,
+    10,
+    20,
+    35,
+    50
+  ],
+  "states": [
+    "active",
+    "fatigue1",
+    "fatigue2",
+    "fatigue3"
+  ],
+  "count": 120,
+  "motionStrength": 0.23
+}

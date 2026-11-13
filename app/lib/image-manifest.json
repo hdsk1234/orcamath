@@ -1,0 +1,3585 @@
+{
+  "/brand/orca-symbol-v1.webp": {
+    "src": "/brand/orca-symbol-v1.webp",
+    "width": 292,
+    "height": 292,
+    "variants": [
+      {
+        "width": 88,
+        "src": "/optimized/brand-orca-symbol-v1-88-c62b1b7e5576.webp"
+      },
+      {
+        "width": 176,
+        "src": "/optimized/brand-orca-symbol-v1-176-2224e0bd0acf.webp"
+      },
+      {
+        "width": 292,
+        "src": "/brand/orca-symbol-v1.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv1-active.webp": {
+    "src": "/companions/octopus/lv1-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv1-active-128-511cc26bbf98.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv1-active-256-130bbb374c81.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv1-active.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv1-fatigue1.webp": {
+    "src": "/companions/octopus/lv1-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv1-fatigue1-128-91305ccdd448.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv1-fatigue1-256-56ad9d454fd5.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv1-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv1-fatigue2.webp": {
+    "src": "/companions/octopus/lv1-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv1-fatigue2-128-b5da9b0b3967.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv1-fatigue2-256-3bb1fce9242f.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv1-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv1-fatigue3.webp": {
+    "src": "/companions/octopus/lv1-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv1-fatigue3-128-2c7deadaaea0.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv1-fatigue3-256-154aa49a3d32.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv1-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv10-active.webp": {
+    "src": "/companions/octopus/lv10-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv10-active-128-831a392b000c.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv10-active-256-15f9622ade46.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv10-active.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv10-fatigue1.webp": {
+    "src": "/companions/octopus/lv10-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv10-fatigue1-128-6f2557fa05c9.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv10-fatigue1-256-9a058f81fb0d.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv10-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv10-fatigue2.webp": {
+    "src": "/companions/octopus/lv10-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv10-fatigue2-128-91e2b38a272d.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv10-fatigue2-256-c2a9ecf35f2b.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv10-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv10-fatigue3.webp": {
+    "src": "/companions/octopus/lv10-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv10-fatigue3-128-01822b2f3a27.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv10-fatigue3-256-c8e0ecdd0610.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv10-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv20-active.webp": {
+    "src": "/companions/octopus/lv20-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv20-active-128-938900ae5472.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv20-active-256-d91fc5f6d040.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv20-active.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv20-fatigue1.webp": {
+    "src": "/companions/octopus/lv20-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv20-fatigue1-128-c8352a982a72.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv20-fatigue1-256-969fcc152588.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv20-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv20-fatigue2.webp": {
+    "src": "/companions/octopus/lv20-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv20-fatigue2-128-78d443cbc5a7.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv20-fatigue2-256-536d64ebd2ba.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv20-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv20-fatigue3.webp": {
+    "src": "/companions/octopus/lv20-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv20-fatigue3-128-b4dd5d9a0f9a.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv20-fatigue3-256-7d9d589964e8.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv20-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv35-active.webp": {
+    "src": "/companions/octopus/lv35-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv35-active-128-a1e21d5bb623.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv35-active-256-69e061835095.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv35-active.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv35-fatigue1.webp": {
+    "src": "/companions/octopus/lv35-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv35-fatigue1-128-f1fd078c993d.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv35-fatigue1-256-c66ed206ed4d.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv35-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv35-fatigue2.webp": {
+    "src": "/companions/octopus/lv35-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv35-fatigue2-128-06a3a6c2115e.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv35-fatigue2-256-91e93b2822a1.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv35-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv35-fatigue3.webp": {
+    "src": "/companions/octopus/lv35-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv35-fatigue3-128-155ca2be8f6b.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv35-fatigue3-256-016793184e9a.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv35-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv5-active.webp": {
+    "src": "/companions/octopus/lv5-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv5-active-128-b0f5af8edba6.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv5-active-256-500e88dfaff4.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv5-active.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv5-fatigue1.webp": {
+    "src": "/companions/octopus/lv5-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv5-fatigue1-128-dc782da0b025.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv5-fatigue1-256-98dda8b059e6.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv5-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv5-fatigue2.webp": {
+    "src": "/companions/octopus/lv5-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv5-fatigue2-128-f1edc57e571d.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv5-fatigue2-256-84e83c40813f.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv5-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv5-fatigue3.webp": {
+    "src": "/companions/octopus/lv5-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv5-fatigue3-128-d0258da0c725.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv5-fatigue3-256-bc0966a5398b.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv5-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv50-active.webp": {
+    "src": "/companions/octopus/lv50-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv50-active-128-279d653af654.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv50-active-256-9b48e6024371.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv50-active.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv50-fatigue1.webp": {
+    "src": "/companions/octopus/lv50-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv50-fatigue1-128-81b6a626d4d3.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv50-fatigue1-256-74b17be43054.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv50-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv50-fatigue2.webp": {
+    "src": "/companions/octopus/lv50-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv50-fatigue2-128-8dbe9c68282a.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv50-fatigue2-256-81356737d0b8.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv50-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/octopus/lv50-fatigue3.webp": {
+    "src": "/companions/octopus/lv50-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-octopus-lv50-fatigue3-128-830ac19addb0.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-octopus-lv50-fatigue3-256-d56a221d5d21.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/octopus/lv50-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv1-active.webp": {
+    "src": "/companions/orca/lv1-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv1-active-128-1ac4dec3b234.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv1-active-256-3577c5550be3.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv1-active.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv1-fatigue1.webp": {
+    "src": "/companions/orca/lv1-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv1-fatigue1-128-e971144b22b5.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv1-fatigue1-256-43199fe8fbc8.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv1-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv1-fatigue2.webp": {
+    "src": "/companions/orca/lv1-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv1-fatigue2-128-6311acc39e8f.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv1-fatigue2-256-ca0f945dbeab.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv1-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv1-fatigue3.webp": {
+    "src": "/companions/orca/lv1-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv1-fatigue3-128-a919a6b6f6ce.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv1-fatigue3-256-90eecb915cfc.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv1-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv10-active.webp": {
+    "src": "/companions/orca/lv10-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv10-active-128-01e19bce783f.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv10-active-256-725f82a443f1.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv10-active.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv10-fatigue1.webp": {
+    "src": "/companions/orca/lv10-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv10-fatigue1-128-adf5094ebd2d.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv10-fatigue1-256-18e27384df9a.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv10-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv10-fatigue2.webp": {
+    "src": "/companions/orca/lv10-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv10-fatigue2-128-f0fdd568ae1e.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv10-fatigue2-256-24a7918393e6.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv10-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv10-fatigue3.webp": {
+    "src": "/companions/orca/lv10-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv10-fatigue3-128-88149ee1debe.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv10-fatigue3-256-0ba8014784fe.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv10-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv20-active.webp": {
+    "src": "/companions/orca/lv20-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv20-active-128-ede04fafa31b.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv20-active-256-fbcf1b659597.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv20-active.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv20-fatigue1.webp": {
+    "src": "/companions/orca/lv20-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv20-fatigue1-128-a7dea12f0673.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv20-fatigue1-256-eeda04343fc2.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv20-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv20-fatigue2.webp": {
+    "src": "/companions/orca/lv20-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv20-fatigue2-128-5f9e3a2290f7.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv20-fatigue2-256-958fe9e1325c.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv20-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv20-fatigue3.webp": {
+    "src": "/companions/orca/lv20-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv20-fatigue3-128-a72ab72dae61.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv20-fatigue3-256-dabbbc156ff6.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv20-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv35-active.webp": {
+    "src": "/companions/orca/lv35-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv35-active-128-4b4580d20540.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv35-active-256-565de4c0f190.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv35-active.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv35-fatigue1.webp": {
+    "src": "/companions/orca/lv35-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv35-fatigue1-128-6fbc9f317b76.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv35-fatigue1-256-e58f649fe5c7.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv35-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv35-fatigue2.webp": {
+    "src": "/companions/orca/lv35-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv35-fatigue2-128-25c2bb8cc1f7.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv35-fatigue2-256-d187c1ec99eb.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv35-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv35-fatigue3.webp": {
+    "src": "/companions/orca/lv35-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv35-fatigue3-128-bf8fc2f047c4.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv35-fatigue3-256-65a9535d18ef.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv35-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv5-active.webp": {
+    "src": "/companions/orca/lv5-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv5-active-128-dcc22e041f20.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv5-active-256-af89fc25cb11.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv5-active.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv5-fatigue1.webp": {
+    "src": "/companions/orca/lv5-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv5-fatigue1-128-72c22207a9b3.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv5-fatigue1-256-22e57fd72c1d.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv5-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv5-fatigue2.webp": {
+    "src": "/companions/orca/lv5-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv5-fatigue2-128-1cbf999bf456.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv5-fatigue2-256-b18ea1496e26.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv5-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv5-fatigue3.webp": {
+    "src": "/companions/orca/lv5-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv5-fatigue3-128-ecd743d51ab8.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv5-fatigue3-256-d72b5aa6b145.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv5-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv50-active.webp": {
+    "src": "/companions/orca/lv50-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv50-active-128-305312171e49.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv50-active-256-69c9fb056d10.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv50-active.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv50-fatigue1.webp": {
+    "src": "/companions/orca/lv50-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv50-fatigue1-128-e29d3bb6952e.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv50-fatigue1-256-c592cf58ad0f.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv50-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv50-fatigue2.webp": {
+    "src": "/companions/orca/lv50-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv50-fatigue2-128-e5f2bef58a5b.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv50-fatigue2-256-7cc8ab42a782.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv50-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/orca/lv50-fatigue3.webp": {
+    "src": "/companions/orca/lv50-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-orca-lv50-fatigue3-128-67f7c0659e72.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-orca-lv50-fatigue3-256-114bdebc8bba.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/orca/lv50-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv1-active.webp": {
+    "src": "/companions/seahorse/lv1-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv1-active-128-6da1786c81ba.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv1-active-256-519fc89517cb.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv1-active.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv1-fatigue1.webp": {
+    "src": "/companions/seahorse/lv1-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv1-fatigue1-128-8a5ed92468c1.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv1-fatigue1-256-c0f6dc0403ad.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv1-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv1-fatigue2.webp": {
+    "src": "/companions/seahorse/lv1-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv1-fatigue2-128-8ab5119730b1.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv1-fatigue2-256-3b5aa09f2a95.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv1-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv1-fatigue3.webp": {
+    "src": "/companions/seahorse/lv1-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv1-fatigue3-128-1f1c31b94735.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv1-fatigue3-256-d4df4832c11b.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv1-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv10-active.webp": {
+    "src": "/companions/seahorse/lv10-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv10-active-128-d50fac9fb208.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv10-active-256-541d750f69bd.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv10-active.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv10-fatigue1.webp": {
+    "src": "/companions/seahorse/lv10-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv10-fatigue1-128-f13c54f387e3.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv10-fatigue1-256-c373947af9f6.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv10-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv10-fatigue2.webp": {
+    "src": "/companions/seahorse/lv10-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv10-fatigue2-128-983b3c1c4c61.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv10-fatigue2-256-e48b3694c745.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv10-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv10-fatigue3.webp": {
+    "src": "/companions/seahorse/lv10-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv10-fatigue3-128-f7a3e01390cf.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv10-fatigue3-256-a0393aceb5ef.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv10-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv20-active.webp": {
+    "src": "/companions/seahorse/lv20-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv20-active-128-da0031859036.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv20-active-256-9ac788fba9a2.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv20-active.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv20-fatigue1.webp": {
+    "src": "/companions/seahorse/lv20-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv20-fatigue1-128-5756cc89b7ba.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv20-fatigue1-256-662cb0effcd8.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv20-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv20-fatigue2.webp": {
+    "src": "/companions/seahorse/lv20-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv20-fatigue2-128-89bfacbff88a.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv20-fatigue2-256-6290b893da88.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv20-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv20-fatigue3.webp": {
+    "src": "/companions/seahorse/lv20-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv20-fatigue3-128-56fb9a2ebb9c.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv20-fatigue3-256-6e4379892198.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv20-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv35-active.webp": {
+    "src": "/companions/seahorse/lv35-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv35-active-128-07ff2e5a5a9d.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv35-active-256-05e2c9959da5.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv35-active.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv35-fatigue1.webp": {
+    "src": "/companions/seahorse/lv35-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv35-fatigue1-128-777c39b6c84c.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv35-fatigue1-256-456b595d351a.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv35-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv35-fatigue2.webp": {
+    "src": "/companions/seahorse/lv35-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv35-fatigue2-128-c78db48b5fa5.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv35-fatigue2-256-78e4d6a48258.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv35-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv35-fatigue3.webp": {
+    "src": "/companions/seahorse/lv35-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv35-fatigue3-128-fc62a8b78b68.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv35-fatigue3-256-0af8fb40fe38.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv35-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv5-active.webp": {
+    "src": "/companions/seahorse/lv5-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv5-active-128-ff77d37ea3ee.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv5-active-256-22a5f9d3682f.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv5-active.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv5-fatigue1.webp": {
+    "src": "/companions/seahorse/lv5-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv5-fatigue1-128-e92ddca0bd9e.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv5-fatigue1-256-538fd3afd41a.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv5-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv5-fatigue2.webp": {
+    "src": "/companions/seahorse/lv5-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv5-fatigue2-128-39b661ba1d30.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv5-fatigue2-256-fb04d9e0ea64.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv5-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv5-fatigue3.webp": {
+    "src": "/companions/seahorse/lv5-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv5-fatigue3-128-1ca103f53387.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv5-fatigue3-256-5a3688c8a0de.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv5-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv50-active.webp": {
+    "src": "/companions/seahorse/lv50-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv50-active-128-3783ea280eb0.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv50-active-256-7c9b1a2f7e31.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv50-active.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv50-fatigue1.webp": {
+    "src": "/companions/seahorse/lv50-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv50-fatigue1-128-efe4de24f435.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv50-fatigue1-256-15f43661bdc5.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv50-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv50-fatigue2.webp": {
+    "src": "/companions/seahorse/lv50-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv50-fatigue2-128-c60d52f1b746.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv50-fatigue2-256-390d136aa85f.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv50-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/seahorse/lv50-fatigue3.webp": {
+    "src": "/companions/seahorse/lv50-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-seahorse-lv50-fatigue3-128-76d05c123f0f.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-seahorse-lv50-fatigue3-256-a7aacb24973b.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/seahorse/lv50-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv1-active.webp": {
+    "src": "/companions/shark/lv1-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv1-active-128-98c222406a1e.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv1-active-256-37d2dc47d4b6.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv1-active.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv1-fatigue1.webp": {
+    "src": "/companions/shark/lv1-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv1-fatigue1-128-82e76ca03f20.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv1-fatigue1-256-97796dfc4672.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv1-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv1-fatigue2.webp": {
+    "src": "/companions/shark/lv1-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv1-fatigue2-128-8f2f3b0b4a16.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv1-fatigue2-256-73d9022899a4.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv1-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv1-fatigue3.webp": {
+    "src": "/companions/shark/lv1-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv1-fatigue3-128-8837dcd72dc8.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv1-fatigue3-256-77fc0d863d1f.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv1-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv10-active.webp": {
+    "src": "/companions/shark/lv10-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv10-active-128-f87a98a552e5.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv10-active-256-d15b59c505f4.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv10-active.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv10-fatigue1.webp": {
+    "src": "/companions/shark/lv10-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv10-fatigue1-128-1899c6d98c06.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv10-fatigue1-256-5c4958d8ff03.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv10-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv10-fatigue2.webp": {
+    "src": "/companions/shark/lv10-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv10-fatigue2-128-8d66adea4c20.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv10-fatigue2-256-f1478124ad19.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv10-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv10-fatigue3.webp": {
+    "src": "/companions/shark/lv10-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv10-fatigue3-128-1e149dc5436e.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv10-fatigue3-256-57aa42ea2750.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv10-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv20-active.webp": {
+    "src": "/companions/shark/lv20-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv20-active-128-929bb580e04c.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv20-active-256-b38f539ce771.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv20-active.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv20-fatigue1.webp": {
+    "src": "/companions/shark/lv20-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv20-fatigue1-128-6bb9480452ff.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv20-fatigue1-256-fcc88077297f.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv20-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv20-fatigue2.webp": {
+    "src": "/companions/shark/lv20-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv20-fatigue2-128-a68a67757bff.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv20-fatigue2-256-75da1539f1b2.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv20-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv20-fatigue3.webp": {
+    "src": "/companions/shark/lv20-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv20-fatigue3-128-dcb5305e7d15.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv20-fatigue3-256-f58251a52dd2.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv20-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv35-active.webp": {
+    "src": "/companions/shark/lv35-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv35-active-128-1457410a33aa.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv35-active-256-4b6401333a45.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv35-active.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv35-fatigue1.webp": {
+    "src": "/companions/shark/lv35-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv35-fatigue1-128-fec463cdd33f.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv35-fatigue1-256-0015f2bcafee.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv35-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv35-fatigue2.webp": {
+    "src": "/companions/shark/lv35-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv35-fatigue2-128-ced7427e9126.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv35-fatigue2-256-bbf529a60db1.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv35-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv35-fatigue3.webp": {
+    "src": "/companions/shark/lv35-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv35-fatigue3-128-bc11042f7554.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv35-fatigue3-256-d5155a848c59.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv35-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv5-active.webp": {
+    "src": "/companions/shark/lv5-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv5-active-128-dd8acfbec6d1.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv5-active-256-08415294974b.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv5-active.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv5-fatigue1.webp": {
+    "src": "/companions/shark/lv5-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv5-fatigue1-128-06d9c979418e.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv5-fatigue1-256-bfb65d189b53.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv5-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv5-fatigue2.webp": {
+    "src": "/companions/shark/lv5-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv5-fatigue2-128-72c6f2fadd14.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv5-fatigue2-256-2e70de0e1fc4.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv5-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv5-fatigue3.webp": {
+    "src": "/companions/shark/lv5-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv5-fatigue3-128-66906b2396e7.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv5-fatigue3-256-87232de704fa.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv5-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv50-active.webp": {
+    "src": "/companions/shark/lv50-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv50-active-128-0ebb4a6d2ad5.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv50-active-256-83a786088c25.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv50-active.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv50-fatigue1.webp": {
+    "src": "/companions/shark/lv50-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv50-fatigue1-128-556494910543.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv50-fatigue1-256-dff9f1c82977.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv50-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv50-fatigue2.webp": {
+    "src": "/companions/shark/lv50-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv50-fatigue2-128-07390ea74952.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv50-fatigue2-256-555d322fb00b.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv50-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/shark/lv50-fatigue3.webp": {
+    "src": "/companions/shark/lv50-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-shark-lv50-fatigue3-128-58769e4400a8.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-shark-lv50-fatigue3-256-6d6821acafe4.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/shark/lv50-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv1-active.webp": {
+    "src": "/companions/turtle/lv1-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv1-active-128-06d5ee2445bc.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv1-active-256-71a1bfd3ff54.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv1-active.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv1-fatigue1.webp": {
+    "src": "/companions/turtle/lv1-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv1-fatigue1-128-12531111ee1e.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv1-fatigue1-256-fdac2c1bc58d.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv1-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv1-fatigue2.webp": {
+    "src": "/companions/turtle/lv1-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv1-fatigue2-128-041f04deea73.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv1-fatigue2-256-ae44d5e51b23.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv1-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv1-fatigue3.webp": {
+    "src": "/companions/turtle/lv1-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv1-fatigue3-128-de4159d271de.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv1-fatigue3-256-5b5f766a29a4.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv1-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv10-active.webp": {
+    "src": "/companions/turtle/lv10-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv10-active-128-7ad057d89123.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv10-active-256-7f1482cdfcdd.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv10-active.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv10-fatigue1.webp": {
+    "src": "/companions/turtle/lv10-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv10-fatigue1-128-adc440c2c416.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv10-fatigue1-256-385b17d605c2.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv10-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv10-fatigue2.webp": {
+    "src": "/companions/turtle/lv10-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv10-fatigue2-128-2af2a57ae576.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv10-fatigue2-256-ae7d17f2ff52.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv10-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv10-fatigue3.webp": {
+    "src": "/companions/turtle/lv10-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv10-fatigue3-128-0be98cc22a0f.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv10-fatigue3-256-5fb1a367fb36.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv10-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv20-active.webp": {
+    "src": "/companions/turtle/lv20-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv20-active-128-b9bc7b483f37.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv20-active-256-ecfb723473ff.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv20-active.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv20-fatigue1.webp": {
+    "src": "/companions/turtle/lv20-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv20-fatigue1-128-314822578e95.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv20-fatigue1-256-eb275ccccbb4.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv20-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv20-fatigue2.webp": {
+    "src": "/companions/turtle/lv20-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv20-fatigue2-128-70b148588fa2.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv20-fatigue2-256-18636e9118c1.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv20-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv20-fatigue3.webp": {
+    "src": "/companions/turtle/lv20-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv20-fatigue3-128-27ffbef3c3ae.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv20-fatigue3-256-7d163173a45a.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv20-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv35-active.webp": {
+    "src": "/companions/turtle/lv35-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv35-active-128-146bfb8d48c9.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv35-active-256-b8bbb6c93632.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv35-active.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv35-fatigue1.webp": {
+    "src": "/companions/turtle/lv35-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv35-fatigue1-128-2beb7801398a.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv35-fatigue1-256-b0b0cda9af86.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv35-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv35-fatigue2.webp": {
+    "src": "/companions/turtle/lv35-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv35-fatigue2-128-2e2c79a2e50a.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv35-fatigue2-256-4c7179280f8e.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv35-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv35-fatigue3.webp": {
+    "src": "/companions/turtle/lv35-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv35-fatigue3-128-e5f847680900.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv35-fatigue3-256-b077cdfad2e7.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv35-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv5-active.webp": {
+    "src": "/companions/turtle/lv5-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv5-active-128-0b6cae8eaaae.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv5-active-256-0e1e0b6c75a6.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv5-active.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv5-fatigue1.webp": {
+    "src": "/companions/turtle/lv5-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv5-fatigue1-128-9921a933716a.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv5-fatigue1-256-facf7afc8353.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv5-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv5-fatigue2.webp": {
+    "src": "/companions/turtle/lv5-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv5-fatigue2-128-406360270db2.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv5-fatigue2-256-cc5f821df09c.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv5-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv5-fatigue3.webp": {
+    "src": "/companions/turtle/lv5-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv5-fatigue3-128-5656ccd5759f.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv5-fatigue3-256-16d19d728e67.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv5-fatigue3.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv50-active.webp": {
+    "src": "/companions/turtle/lv50-active.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv50-active-128-1bc8670133f3.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv50-active-256-ce21e77528e1.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv50-active.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv50-fatigue1.webp": {
+    "src": "/companions/turtle/lv50-fatigue1.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv50-fatigue1-128-1356fdd01116.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv50-fatigue1-256-3553a5cab69d.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv50-fatigue1.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv50-fatigue2.webp": {
+    "src": "/companions/turtle/lv50-fatigue2.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv50-fatigue2-128-6e9db0a3dfb6.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv50-fatigue2-256-06bc0d591ffa.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv50-fatigue2.webp"
+      }
+    ]
+  },
+  "/companions/turtle/lv50-fatigue3.webp": {
+    "src": "/companions/turtle/lv50-fatigue3.webp",
+    "width": 480,
+    "height": 480,
+    "variants": [
+      {
+        "width": 128,
+        "src": "/optimized/companions-turtle-lv50-fatigue3-128-96e41d6e2b40.webp"
+      },
+      {
+        "width": 256,
+        "src": "/optimized/companions-turtle-lv50-fatigue3-256-755864f618b8.webp"
+      },
+      {
+        "width": 480,
+        "src": "/companions/turtle/lv50-fatigue3.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-01.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-01-9b96d4c6313f.webp",
+    "width": 626,
+    "height": 111,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-01-9b96d4c6313f.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-02.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-02-1674ba2de960.webp",
+    "width": 626,
+    "height": 125,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-02-1674ba2de960.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-03.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-03-ec5a7bdd639f.webp",
+    "width": 626,
+    "height": 537,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-03-ec5a7bdd639f.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-04-part-01.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-04-part-01-6fd8d9912540.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-04-part-01-6fd8d9912540.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-04-part-02.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-04-part-02-bd502906cefd.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-04-part-02-bd502906cefd.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-04.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-04-07910217f9e8.webp",
+    "width": 626,
+    "height": 698,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-04-07910217f9e8.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-05.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-05-1b4e3b04160b.webp",
+    "width": 626,
+    "height": 199,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-05-1b4e3b04160b.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-06.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-06-041c29a4f33b.webp",
+    "width": 626,
+    "height": 113,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-06-041c29a4f33b.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-07.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-07-ea42eaa1460a.webp",
+    "width": 626,
+    "height": 96,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-07-ea42eaa1460a.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-08.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-08-7834a03943a5.webp",
+    "width": 626,
+    "height": 112,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-08-7834a03943a5.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-09.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-09-10553ea92418.webp",
+    "width": 626,
+    "height": 214,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-09-10553ea92418.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-10.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-10-ace0d70e3039.webp",
+    "width": 626,
+    "height": 150,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-10-ace0d70e3039.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-11.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-11-d01ca7bc59f9.webp",
+    "width": 626,
+    "height": 121,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-11-d01ca7bc59f9.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-12.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-12-12818e58f6d7.webp",
+    "width": 626,
+    "height": 592,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-12-12818e58f6d7.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-13.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-13-325a9818731a.webp",
+    "width": 626,
+    "height": 547,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-13-325a9818731a.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-14.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-14-70046dbf5254.webp",
+    "width": 626,
+    "height": 198,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-14-70046dbf5254.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-application-15.png": {
+    "src": "/optimized/diagnostic-images-algebra-application-15-f6c6b9eb952e.webp",
+    "width": 626,
+    "height": 193,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-application-15-f6c6b9eb952e.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-01.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-01-415a7f765e07.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-01-415a7f765e07.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-02.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-02-40bb325e4ade.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-02-40bb325e4ade.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-03.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-03-d4c3761477ff.webp",
+    "width": 626,
+    "height": 110,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-03-d4c3761477ff.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-04.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-04-c6144753aa3c.webp",
+    "width": 626,
+    "height": 109,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-04-c6144753aa3c.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-05.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-05-31b7dc60b3f7.webp",
+    "width": 626,
+    "height": 113,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-05-31b7dc60b3f7.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-06.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-06-4ec426dbd4b5.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-06-4ec426dbd4b5.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-07.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-07-67a04f3bca83.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-07-67a04f3bca83.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-08.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-08-5301f96481d2.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-08-5301f96481d2.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-09.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-09-24c520cd781c.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-09-24c520cd781c.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-10.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-10-af97f45c4044.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-10-af97f45c4044.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-11.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-11-ef17845bd078.webp",
+    "width": 626,
+    "height": 109,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-11-ef17845bd078.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-12.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-12-281d3b7f13ef.webp",
+    "width": 626,
+    "height": 73,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-12-281d3b7f13ef.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-13.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-13-ba1fedb9091c.webp",
+    "width": 626,
+    "height": 73,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-13-ba1fedb9091c.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-14.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-14-45adb36ff2a0.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-14-45adb36ff2a0.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/algebra-concept-15.png": {
+    "src": "/optimized/diagnostic-images-algebra-concept-15-818379740ef6.webp",
+    "width": 626,
+    "height": 98,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-algebra-concept-15-818379740ef6.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-01.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-01-f0f8349234f5.webp",
+    "width": 626,
+    "height": 337,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-01-f0f8349234f5.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-02.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-02-778a72c076c5.webp",
+    "width": 626,
+    "height": 218,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-02-778a72c076c5.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-03.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-03-03ee893aa136.webp",
+    "width": 626,
+    "height": 240,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-03-03ee893aa136.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-04-part-01.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-04-part-01-f304204c8999.webp",
+    "width": 626,
+    "height": 158,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-04-part-01-f304204c8999.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-04-part-02.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-04-part-02-4fb762fdd929.webp",
+    "width": 626,
+    "height": 141,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-04-part-02-4fb762fdd929.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-04-part-03.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-04-part-03-e796cf75c34d.webp",
+    "width": 626,
+    "height": 146,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-04-part-03-e796cf75c34d.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-04-part-04.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-04-part-04-1d4d73ba27c2.webp",
+    "width": 626,
+    "height": 141,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-04-part-04-1d4d73ba27c2.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-04.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-04-efe286e0d168.webp",
+    "width": 626,
+    "height": 601,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-04-efe286e0d168.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-05.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-05-5d5e0a295000.webp",
+    "width": 626,
+    "height": 144,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-05-5d5e0a295000.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-06-part-01.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-06-part-01-153f3b722880.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-06-part-01-153f3b722880.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-06-part-02.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-06-part-02-2c39fec3846d.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-06-part-02-2c39fec3846d.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-06.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-06-f8122f044671.webp",
+    "width": 626,
+    "height": 434,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-06-f8122f044671.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-07.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-07-a063e4569f37.webp",
+    "width": 626,
+    "height": 640,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-07-a063e4569f37.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-08-part-01.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-08-part-01-ad1d2ebac044.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-08-part-01-ad1d2ebac044.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-08-part-02.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-08-part-02-dd7223348079.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-08-part-02-dd7223348079.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-08.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-08-6045d45da2a8.webp",
+    "width": 626,
+    "height": 235,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-08-6045d45da2a8.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-09.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-09-c91bb014dd86.webp",
+    "width": 626,
+    "height": 150,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-09-c91bb014dd86.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-10.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-10-9c684a01434d.webp",
+    "width": 626,
+    "height": 212,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-10-9c684a01434d.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-11.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-11-e90d0963b78d.webp",
+    "width": 626,
+    "height": 179,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-11-e90d0963b78d.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-12-part-01.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-12-part-01-dc250311bac9.webp",
+    "width": 626,
+    "height": 99,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-12-part-01-dc250311bac9.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-12-part-02.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-12-part-02-18c308eb1b54.webp",
+    "width": 626,
+    "height": 99,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-12-part-02-18c308eb1b54.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-12.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-12-3397d1089e3f.webp",
+    "width": 626,
+    "height": 371,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-12-3397d1089e3f.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-13.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-13-119f6ede3af8.webp",
+    "width": 626,
+    "height": 183,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-13-119f6ede3af8.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-14.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-14-1c94ee27bcca.webp",
+    "width": 626,
+    "height": 140,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-14-1c94ee27bcca.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-application-15.png": {
+    "src": "/optimized/diagnostic-images-calculus-application-15-68475f958e47.webp",
+    "width": 626,
+    "height": 220,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-application-15-68475f958e47.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-01.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-01-ab9aeea93b31.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-01-ab9aeea93b31.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-02.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-02-bc8964dac5dd.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-02-bc8964dac5dd.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-03.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-03-9bd4371353fe.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-03-9bd4371353fe.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-04.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-04-4c921471336f.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-04-4c921471336f.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-05.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-05-ff416a3fbe5f.webp",
+    "width": 626,
+    "height": 110,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-05-ff416a3fbe5f.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-06.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-06-1f4a22de6415.webp",
+    "width": 626,
+    "height": 74,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-06-1f4a22de6415.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-07.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-07-a0d75309577f.webp",
+    "width": 626,
+    "height": 73,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-07-a0d75309577f.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-08.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-08-fb278778a754.webp",
+    "width": 626,
+    "height": 73,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-08-fb278778a754.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-09.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-09-1055fc8fa394.webp",
+    "width": 626,
+    "height": 73,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-09-1055fc8fa394.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-10.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-10-80f8a94f95e7.webp",
+    "width": 626,
+    "height": 461,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-10-80f8a94f95e7.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-11.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-11-de188d402142.webp",
+    "width": 626,
+    "height": 112,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-11-de188d402142.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-12.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-12-6f45f7bbbfc6.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-12-6f45f7bbbfc6.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-13.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-13-3a24c770f58a.webp",
+    "width": 626,
+    "height": 152,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-13-3a24c770f58a.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-14.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-14-fc08d47d3488.webp",
+    "width": 626,
+    "height": 417,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-14-fc08d47d3488.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/calculus-concept-15.png": {
+    "src": "/optimized/diagnostic-images-calculus-concept-15-a36bdd26b14f.webp",
+    "width": 626,
+    "height": 94,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-calculus-concept-15-a36bdd26b14f.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-01.png": {
+    "src": "/optimized/diagnostic-images-common-application-01-4d6ceadf696b.webp",
+    "width": 626,
+    "height": 153,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-01-4d6ceadf696b.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-02.png": {
+    "src": "/optimized/diagnostic-images-common-application-02-a40557e377b7.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-02-a40557e377b7.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-03.png": {
+    "src": "/optimized/diagnostic-images-common-application-03-f17c439d80cf.webp",
+    "width": 626,
+    "height": 553,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-03-f17c439d80cf.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-04.png": {
+    "src": "/optimized/diagnostic-images-common-application-04-c7f172f3706e.webp",
+    "width": 626,
+    "height": 150,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-04-c7f172f3706e.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-05-part-01.png": {
+    "src": "/optimized/diagnostic-images-common-application-05-part-01-fafb56bc570b.webp",
+    "width": 626,
+    "height": 111,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-05-part-01-fafb56bc570b.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-05-part-02.png": {
+    "src": "/optimized/diagnostic-images-common-application-05-part-02-7e48a28c1a86.webp",
+    "width": 626,
+    "height": 112,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-05-part-02-7e48a28c1a86.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-05.png": {
+    "src": "/optimized/diagnostic-images-common-application-05-78e6ce68e370.webp",
+    "width": 626,
+    "height": 207,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-05-78e6ce68e370.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-06-part-01.png": {
+    "src": "/optimized/diagnostic-images-common-application-06-part-01-941ac8363c66.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-06-part-01-941ac8363c66.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-06-part-02.png": {
+    "src": "/optimized/diagnostic-images-common-application-06-part-02-27024aeb5346.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-06-part-02-27024aeb5346.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-06.png": {
+    "src": "/optimized/diagnostic-images-common-application-06-b46ab75bb7e1.webp",
+    "width": 626,
+    "height": 236,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-06-b46ab75bb7e1.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-07-part-01.png": {
+    "src": "/optimized/diagnostic-images-common-application-07-part-01-6e518b5f04be.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-07-part-01-6e518b5f04be.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-07-part-02.png": {
+    "src": "/optimized/diagnostic-images-common-application-07-part-02-83848782abf9.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-07-part-02-83848782abf9.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-07.png": {
+    "src": "/optimized/diagnostic-images-common-application-07-2abd02848206.webp",
+    "width": 626,
+    "height": 632,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-07-2abd02848206.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-08-part-01.png": {
+    "src": "/optimized/diagnostic-images-common-application-08-part-01-32fed201a3fa.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-08-part-01-32fed201a3fa.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-08-part-02.png": {
+    "src": "/optimized/diagnostic-images-common-application-08-part-02-0b03ac11898d.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-08-part-02-0b03ac11898d.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-08-part-03.png": {
+    "src": "/optimized/diagnostic-images-common-application-08-part-03-58934b563db2.webp",
+    "width": 626,
+    "height": 110,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-08-part-03-58934b563db2.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-08.png": {
+    "src": "/optimized/diagnostic-images-common-application-08-e501765ca857.webp",
+    "width": 626,
+    "height": 292,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-08-e501765ca857.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-09.png": {
+    "src": "/optimized/diagnostic-images-common-application-09-1c8bd23c8ea5.webp",
+    "width": 626,
+    "height": 620,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-09-1c8bd23c8ea5.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-10-part-01.png": {
+    "src": "/optimized/diagnostic-images-common-application-10-part-01-65c1aa59175f.webp",
+    "width": 626,
+    "height": 74,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-10-part-01-65c1aa59175f.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-10-part-02.png": {
+    "src": "/optimized/diagnostic-images-common-application-10-part-02-53e7310dbdab.webp",
+    "width": 626,
+    "height": 74,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-10-part-02-53e7310dbdab.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-10-part-03.png": {
+    "src": "/optimized/diagnostic-images-common-application-10-part-03-9f5efac9fe1d.webp",
+    "width": 626,
+    "height": 74,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-10-part-03-9f5efac9fe1d.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-10-part-04.png": {
+    "src": "/optimized/diagnostic-images-common-application-10-part-04-3d398c413a2e.webp",
+    "width": 626,
+    "height": 74,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-10-part-04-3d398c413a2e.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-10-part-05.png": {
+    "src": "/optimized/diagnostic-images-common-application-10-part-05-180c6c9ea624.webp",
+    "width": 626,
+    "height": 74,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-10-part-05-180c6c9ea624.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-10-part-06.png": {
+    "src": "/optimized/diagnostic-images-common-application-10-part-06-1f6213afa76b.webp",
+    "width": 626,
+    "height": 74,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-10-part-06-1f6213afa76b.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-10-part-07.png": {
+    "src": "/optimized/diagnostic-images-common-application-10-part-07-bf4cb74103a7.webp",
+    "width": 626,
+    "height": 74,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-10-part-07-bf4cb74103a7.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-10-part-08.png": {
+    "src": "/optimized/diagnostic-images-common-application-10-part-08-0b1aba02d22b.webp",
+    "width": 626,
+    "height": 74,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-10-part-08-0b1aba02d22b.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-10-part-09.png": {
+    "src": "/optimized/diagnostic-images-common-application-10-part-09-c176cc97cd3c.webp",
+    "width": 626,
+    "height": 74,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-10-part-09-c176cc97cd3c.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-10-part-10.png": {
+    "src": "/optimized/diagnostic-images-common-application-10-part-10-1da1c0721692.webp",
+    "width": 626,
+    "height": 74,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-10-part-10-1da1c0721692.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-application-10.png": {
+    "src": "/optimized/diagnostic-images-common-application-10-259fe87079be.webp",
+    "width": 626,
+    "height": 703,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-application-10-259fe87079be.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-concept-01.png": {
+    "src": "/optimized/diagnostic-images-common-concept-01-44cc8ec03500.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-concept-01-44cc8ec03500.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-concept-02.png": {
+    "src": "/optimized/diagnostic-images-common-concept-02-121679bc5f37.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-concept-02-121679bc5f37.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-concept-03.png": {
+    "src": "/optimized/diagnostic-images-common-concept-03-9b2d5c2c886d.webp",
+    "width": 626,
+    "height": 71,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-concept-03-9b2d5c2c886d.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-concept-04.png": {
+    "src": "/optimized/diagnostic-images-common-concept-04-46ab1ef43534.webp",
+    "width": 626,
+    "height": 109,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-concept-04-46ab1ef43534.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-concept-05.png": {
+    "src": "/optimized/diagnostic-images-common-concept-05-f0718d5fe4f0.webp",
+    "width": 626,
+    "height": 109,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-concept-05-f0718d5fe4f0.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-concept-06.png": {
+    "src": "/optimized/diagnostic-images-common-concept-06-15f1aa2602cb.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-concept-06-15f1aa2602cb.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-concept-07.png": {
+    "src": "/optimized/diagnostic-images-common-concept-07-991488592ffb.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-concept-07-991488592ffb.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-concept-08.png": {
+    "src": "/optimized/diagnostic-images-common-concept-08-36f120a64094.webp",
+    "width": 626,
+    "height": 72,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-concept-08-36f120a64094.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-concept-09.png": {
+    "src": "/optimized/diagnostic-images-common-concept-09-0b6874975d2e.webp",
+    "width": 626,
+    "height": 111,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-concept-09-0b6874975d2e.webp"
+      }
+    ]
+  },
+  "/diagnostic/images/common-concept-10.png": {
+    "src": "/optimized/diagnostic-images-common-concept-10-9ca0e6a696d4.webp",
+    "width": 626,
+    "height": 194,
+    "variants": [
+      {
+        "width": 626,
+        "src": "/optimized/diagnostic-images-common-concept-10-9ca0e6a696d4.webp"
+      }
+    ]
+  },
+  "/guide/explanation-original-1.jpg": {
+    "src": "/guide/explanation-original-1.jpg",
+    "width": 1080,
+    "height": 2490,
+    "variants": [
+      {
+        "width": 1080,
+        "src": "/guide/explanation-original-1.jpg"
+      }
+    ]
+  },
+  "/guide/explanation-original-2.jpg": {
+    "src": "/guide/explanation-original-2.jpg",
+    "width": 1080,
+    "height": 1043,
+    "variants": [
+      {
+        "width": 1080,
+        "src": "/guide/explanation-original-2.jpg"
+      }
+    ]
+  },
+  "/guide/lecture-original.jpg": {
+    "src": "/optimized/guide-lecture-original-25a56d10b00d.webp",
+    "width": 1080,
+    "height": 1428,
+    "variants": [
+      {
+        "width": 1080,
+        "src": "/optimized/guide-lecture-original-25a56d10b00d.webp"
+      }
+    ]
+  },
+  "/guide/marking-standard.jpg": {
+    "src": "/optimized/guide-marking-standard-9f575df447c3.webp",
+    "width": 3692,
+    "height": 2932,
+    "variants": [
+      {
+        "width": 1080,
+        "src": "/optimized/guide-marking-standard-1080-542e2064d542.webp"
+      },
+      {
+        "width": 2160,
+        "src": "/optimized/guide-marking-standard-2160-093b85539444.webp"
+      },
+      {
+        "width": 3692,
+        "src": "/optimized/guide-marking-standard-9f575df447c3.webp"
+      }
+    ]
+  },
+  "/guide/practice-original.jpg": {
+    "src": "/guide/practice-original.jpg",
+    "width": 1080,
+    "height": 1574,
+    "variants": [
+      {
+        "width": 1080,
+        "src": "/guide/practice-original.jpg"
+      }
+    ]
+  }
+}
