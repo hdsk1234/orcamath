@@ -1,61 +1,62 @@
-/* Keep both weeks aligned Monday–Sunday at every screen width. */
-.study-plan-calendar{margin-bottom:24px}
-.plan-week{min-width:0;margin-bottom:20px}
-.plan-week-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+/* A compact calendar keeps actual task names visible on every screen. */
+.study-plan-calendar{margin-bottom:24px;min-width:0}
+.plan-week{min-width:0;margin-bottom:18px}
+.plan-week-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px}
 .plan-week-heading h3{font-size:14px;font-weight:750;color:#284655}
 .plan-week-heading>span{font-size:12px;color:#647789}
-.study-plan-calendar .calendar-grid{grid-template-columns:repeat(7,minmax(0,1fr));margin-bottom:0}
-.plan-mobile-detail,.plan-daily-note{display:none}
-.study-plan-calendar .calendar-day:focus-visible{outline:2px solid #28695b;outline-offset:2px}
+.study-plan-calendar .calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0;margin:0;border-top:1px solid #dce2e8;border-left:1px solid #dce2e8}
+.study-plan-calendar .calendar-day{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;min-width:0;min-height:170px;padding:8px 6px;background:#fff;border:0;border-right:1px solid #dce2e8;border-bottom:1px solid #dce2e8;border-radius:0;text-align:left;box-shadow:none}
+.study-plan-calendar .calendar-day.selected{background:#f0f7f4;box-shadow:inset 0 0 0 2px #5b9a85}
+.study-plan-calendar .calendar-day:focus-visible{outline:2px solid #28695b;outline-offset:-2px}
+.study-plan-calendar .calendar-day:nth-child(6),.study-plan-calendar .calendar-day:nth-child(7){background:#f8f9fa}
+.study-plan-calendar .calendar-day.selected:nth-child(6),.study-plan-calendar .calendar-day.selected:nth-child(7){background:#f0f7f4}
+.study-plan-calendar .day-label{display:flex;align-items:center;justify-content:space-between;gap:3px;margin:0 0 10px;min-height:28px;width:100%}
+.study-plan-calendar .day-label>span{font-size:11px;color:#74818d}
+.study-plan-calendar .day-label strong{display:grid;place-items:center;width:28px;height:28px;font-size:20px;line-height:1.2;font-weight:700;color:#35434e}
+.study-plan-calendar .calendar-day.today .day-label strong{background:#ef554c;border-radius:50%;color:#fff}
+.study-plan-calendar .day-label small{display:none}
+.study-plan-calendar .plan-events{display:flex;flex-direction:column;gap:5px;width:100%;margin:0}
+.study-plan-calendar .plan-event{display:flex;align-items:flex-start;gap:5px;width:100%;min-width:0;margin:0;padding:4px 5px;border:0;border-left:4px solid var(--event-color,#55728e);border-radius:4px;background:var(--event-bg,#f1f5fa);color:var(--event-color,#375673);text-align:left;line-height:1.45}
+.plan-event>span:last-child{min-width:0;flex:1}
+.plan-event strong{display:block;font-size:12px;font-weight:750;overflow-wrap:anywhere;word-break:normal}
+.plan-event small{display:block;margin-top:2px;font-size:10px;font-weight:550;color:#52677c}
+.plan-event-check{display:grid;place-items:center;width:13px;height:15px;flex-shrink:0;color:var(--event-color,#55728e)}
+.plan-event-check:has(>span){display:none}
+.plan-event[data-complete=true] strong{text-decoration:line-through;text-decoration-thickness:1px}
+.plan-event-compact{display:none}
+.plan-event-full{display:inline}
+.study-plan-calendar .plan-day-footer{display:block;width:100%;margin-top:auto;padding-top:14px}
+.study-plan-calendar .plan-day-footer .plan-daily-dots{display:flex;align-items:center;justify-content:center;gap:7px;margin:0;padding:0;min-height:12px}
+.plan-forecast-slot{display:none}
 @media(max-width:980px){
- .plan-daily-note{display:flex;flex-wrap:wrap;gap:4px 10px;margin:0 0 18px;font-size:12px;line-height:1.7;color:#536779}
- .plan-daily-note strong{font-weight:650;color:#284655}
- .plan-daily-note>span{flex-basis:100%;font-size:12px;color:#647789}
- .plan-week{padding:16px;background:#f3f6f8;border:1px solid #e2e9ef;border-radius:14px;margin-bottom:14px}
- .plan-week-heading{margin-bottom:14px}
- .study-plan-calendar .calendar-grid{gap:6px}
- .study-plan-calendar .calendar-day{min-width:0;min-height:116px;padding:10px 4px;border-radius:9px;align-items:center;text-align:center}
- .study-plan-calendar .plan-desktop-detail{display:none}
- .study-plan-calendar .plan-mobile-detail{display:block}
- .study-plan-calendar .day-label{display:flex;flex-direction:column;align-items:center;gap:4px;position:relative;margin:0 0 8px;min-height:45px;width:100%}
- .study-plan-calendar .day-label>span{font-size:11px;line-height:1.3;color:#687a8b}
- .study-plan-calendar .day-label strong{font-size:18px;line-height:1.2}
- .study-plan-calendar .day-label small{position:absolute;top:48px;margin:0;font-size:9px;line-height:1.3;color:#28695b}
- .study-plan-calendar .calendar-day.today .day-label{margin-bottom:20px}
- .study-plan-calendar .calendar-zoom{font-size:10px;line-height:1.4;padding:3px 4px;margin:0 0 4px;white-space:nowrap}
- .study-plan-calendar .plan-task-summary{font-size:10px;line-height:1.5;color:#586e80;margin-top:auto;white-space:nowrap}
- .study-plan-calendar .calendar-day.selected{background:#e6f3ee;border-color:#397e69;box-shadow:0 0 0 1px #397e69}
- .study-plan-calendar .calendar-day.selected .day-label strong{color:#215c4b}
- .study-plan-calendar .calendar-day.today:not(.selected){border-color:#5e9986}
-}
-@media(max-width:480px){
- .plan-week{padding:13px 8px}
- .plan-week-heading{padding:0 4px;gap:8px}
- .plan-week-heading h3{font-size:13px}
+ .plan-week{margin-bottom:15px}
  .plan-week-heading>span{font-size:11px}
- .study-plan-calendar .calendar-grid{gap:4px}
- .study-plan-calendar .calendar-day{min-height:112px;padding:9px 2px}
- .study-plan-calendar .day-label strong{font-size:17px}
- .study-plan-calendar .calendar-zoom{font-size:10px;padding:2px 3px}
- .study-plan-calendar .plan-task-summary{font-size:10px}
+ .study-plan-calendar .calendar-day{min-height:150px;padding:7px 4px}
+ .study-plan-calendar .plan-event{padding:4px;border-left-width:3px}
+ .plan-event-full{display:none}
+ .plan-event-compact{display:inline}
+ .plan-event strong{font-size:11px}
+ .plan-event small{display:none}
+ .plan-habit-legend{gap:8px 12px;padding:12px}
+ .plan-habit-legend>small{flex-basis:100%;margin-left:0}
+}
+@media(max-width:600px){
+ .plan-week-heading h3{font-size:13px}
+ .plan-week-heading>span{font-size:10px}
+ .study-plan-calendar .calendar-day{min-height:142px;padding:6px 2px}
+ .study-plan-calendar .day-label{align-items:flex-start;min-height:25px;gap:0;margin-bottom:7px}
+ .study-plan-calendar .day-label>span{font-size:9px;line-height:24px}
+ .study-plan-calendar .day-label strong{width:24px;height:24px;font-size:17px}
+ .study-plan-calendar .plan-events{gap:4px}
+ .study-plan-calendar .plan-event{padding:3px 2px;border-left-width:3px;border-radius:3px;gap:2px}
+ .plan-event strong{font-size:10px;line-height:1.5;letter-spacing:-.025em}
+ .plan-event-check{width:10px;height:15px}
+ .plan-event-check svg{width:10px;height:10px}
+ .study-plan-calendar .plan-day-footer{padding-top:10px}
+ .study-plan-calendar .plan-day-footer .plan-daily-dots{gap:4px}
+ .study-plan-calendar .plan-daily-dots .plan-habit-dot{width:6px;height:6px}
 }
 
-/* Task states use labels and shapes as well as color. */
-.study-plan-calendar .calendar-task{display:flex;align-items:flex-start;gap:7px;margin:7px 0;padding:9px 7px;border:1px solid #d4dfeb;border-left:3px solid #55728e;border-radius:7px;background:#f1f5fa;color:#243e56;font-size:12px;line-height:1.6}
-.study-plan-calendar .calendar-task>div{min-width:0}
-.study-plan-calendar .calendar-task strong{font-size:12px;font-weight:750;overflow-wrap:anywhere}
-.study-plan-calendar .calendar-task small{display:block;margin-top:3px;font-size:11px;font-weight:650;color:#526b83}
-.study-plan-calendar .calendar-task .tiny-status{display:grid;place-items:center;width:18px;height:18px;margin-top:1px;font-size:12px;font-weight:800;background:#dce6f1;color:#375673}
-.study-plan-calendar .calendar-task[data-status=complete]{background:#eaf6ef;border-color:#c4dfcf;border-left-color:#2d805b;color:#245d42}
-.study-plan-calendar .calendar-task[data-status=complete] small{color:#276443}
-.study-plan-calendar .calendar-task[data-status=complete] .tiny-status{background:#2d805b;color:white}
-.study-plan-calendar .calendar-task[data-status=submitted]{background:#fff6e3;border-color:#e7d2a2;border-left-color:#a56a0b}
-.study-plan-calendar .calendar-task[data-status=submitted] small{color:#80530c}
-.study-plan-calendar .calendar-task[data-status=revision],.study-plan-calendar .calendar-task[data-status=missed],.study-plan-calendar .calendar-task[data-status=late]{background:#fff1ea;border-color:#e7c5b3;border-left-color:#ac5430}
-.study-plan-calendar .calendar-task[data-status=revision] small,.study-plan-calendar .calendar-task[data-status=missed] small,.study-plan-calendar .calendar-task[data-status=late] small{color:#924624}
-.study-plan-calendar .calendar-daily{font-size:11px;font-weight:650;line-height:1.7;color:#52697e}
-.study-plan-calendar .calendar-free{font-size:12px;font-weight:650;color:#52697e;line-height:1.7}
-.study-plan-calendar .forecast{font-size:10px;color:#61748a}
 .plan-completion-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 17px;margin-bottom:22px;border-radius:10px;background:#edf3f8;color:#29465f}
 .plan-completion-summary>strong{font-size:22px;font-weight:800}
 .plan-completion-summary>strong>span{font-size:13px;font-weight:650}
@@ -79,15 +80,13 @@
 .selected-day .plan-task-row .badge.revision,.selected-day .plan-task-row .badge.missed{background:#fbe0d3;color:#8d3e21}
 .selected-day .plan-task-row .task-action{font-size:12px;font-weight:700;color:#325d7f;padding:7px 9px;border:1px solid #c7d5e1;border-radius:6px;background:white;min-height:34px}
 .selected-day .plan-task-row .task-action:disabled{color:#62768b;background:#edf2f6;opacity:1}
-.selected-day .plan-task-row[data-plan-status=complete]{background:#edf7f1;border-color:#c2decc;border-left-color:#2d805b}
-.selected-day .plan-task-row[data-plan-status=complete] .task-text h4{color:#245d42}
+
+
 .selected-day .plan-task-row[data-plan-status=complete] .plan-task-check{background:#2d805b;border-color:#2d805b;color:white}
-.selected-day .plan-task-row[data-plan-status=submitted]{border-left-color:#a56a0b;background:#fff9eb}
-.selected-day .plan-task-row[data-plan-status=revision],.selected-day .plan-task-row[data-plan-status=missed],.selected-day .plan-task-row[data-plan-status=late]{border-left-color:#ac5430;background:#fff5ef}
+
+
 .plan-all-done{display:flex;align-items:center;gap:8px;padding:15px;border-radius:9px;background:#edf7f1;color:#245d42;font-size:14px;font-weight:650}
 @media(max-width:980px){
- .study-plan-calendar .plan-task-summary{font-weight:750;color:#304c65}
- .study-plan-calendar .plan-mobile-completed{font-size:9px;font-weight:650;color:#286744;margin-top:2px}
 }
 @media(max-width:600px){
  .selected-day .plan-task-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:14px 12px}
@@ -99,4 +98,41 @@
  .plan-completion-summary{padding:13px 12px;gap:8px}
  .plan-completion-summary>strong{font-size:20px}
  .plan-completion-summary>span,.plan-completion-summary>strong>span{font-size:12px}
+}
+
+/* Daily habits share a fixed order; approval controls dot intensity. */
+.habit-wake{--habit-color:#2563eb}
+.habit-problems{--habit-color:#059669}
+.habit-writing{--habit-color:#a855f7}
+.plan-habit-dot{display:inline-block;width:10px;height:10px;flex-shrink:0;border-radius:50%;background:var(--habit-color);opacity:.23}
+.plan-habit-dot.is-done{opacity:1}
+.plan-habit-legend{display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;padding:13px 16px;margin-bottom:20px;background:#f0f4f8;border-radius:10px;font-size:12px;color:#425970}
+.plan-habit-legend>strong{font-weight:750;color:#263f55}
+.plan-habit-legend>span{display:flex;align-items:center;gap:6px;font-weight:650}
+.plan-habit-legend>small{font-size:11px;color:#5e7284;margin-left:auto}
+.study-plan-calendar .plan-daily-dots{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:auto;padding-top:15px;min-height:27px}
+.plan-daily-controls{margin-bottom:24px}
+.plan-daily-controls>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.plan-daily-controls button{display:grid;grid-template-columns:12px minmax(0,1fr) 14px;align-items:center;gap:5px 8px;border:1px solid #dce4ec;border-radius:9px;background:#fafcfe;padding:13px;text-align:left}
+.plan-daily-controls button .plan-habit-dot{grid-column:1;grid-row:1}
+.plan-daily-controls button strong{grid-column:2;grid-row:1;font-size:14px;font-weight:750;color:#294257}
+.plan-daily-controls button small{grid-column:2;grid-row:2;font-size:11px;color:#536b80;line-height:1.5}
+.plan-daily-controls button>svg{grid-column:3;grid-row:1/3;color:#708396}
+.plan-daily-controls button:hover{border-color:#9ab1c5;background:#f0f5fa}
+.plan-daily-controls button:focus-visible{outline:2px solid #397e69;outline-offset:2px}
+/* All calendar entries use one shape. Color identifies the activity. */
+[data-kind=session],[data-task-kind=attendance]{--event-color:#356db0;--event-bg:#edf4fd;--event-border:#bfd3ee}
+[data-kind=test],[data-task-kind=test]{--event-color:#7951ac;--event-bg:#f4effb;--event-border:#d5c5eb}
+[data-kind=lecture],[data-task-kind=lecture]{--event-color:#227d7a;--event-bg:#eaf6f4;--event-border:#b9ddd8}
+[data-kind=practice],[data-task-kind=practice]{--event-color:#9c681b;--event-bg:#fcf4e6;--event-border:#e5d0a7}
+.selected-day .plan-task-row{background:var(--event-bg,#f6f9fc);border-color:var(--event-border,#cfdae6);border-left-color:var(--event-color,#55728e)}
+.selected-day .plan-task-row .task-text h4{color:var(--event-color,#243c52)}
+.selected-day .plan-task-row .plan-task-check{border-color:var(--event-color,#7c92a7)}
+.selected-day .plan-task-row[data-plan-status=complete] .plan-task-check{background:var(--event-color,#2d805b);border-color:var(--event-color,#2d805b);color:white}
+@media(max-width:600px){
+ .plan-daily-controls>div{gap:7px}
+ .plan-daily-controls button{grid-template-columns:10px minmax(0,1fr);gap:5px 6px;padding:11px 8px}
+ .plan-daily-controls button strong{font-size:12px}
+ .plan-daily-controls button small{font-size:10px;grid-column:1/-1}
+ .plan-daily-controls button>svg{display:none}
 }
