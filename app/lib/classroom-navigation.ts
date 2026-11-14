@@ -6,7 +6,7 @@ import {isManagement} from './permissions.ts';
 export type ClassroomMode = 'student' | 'parent' | 'admin';
 export const LEARNING_PAGES = {
  today:'today', plan:'study-plan', books:'books', questions:'questions',
- result:'diagnostic-results', survey:'diagnostic', growth:'growth',
+ result:'diagnostic-results', survey:'diagnostic', character:'character', growth:'growth', billing:'billing',
  guide:'guide', hall:'hall-of-fame',
 } as const;
 export const ADMIN_PAGES = {

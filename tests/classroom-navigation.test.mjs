@@ -32,7 +32,7 @@ test('주소를 입력해도 학생·학부모는 관리자 화면으로 전환�
 });
 test('등록 전 학생은 주소로 정규 학습 메뉴를 열 수 없다',()=>{
  const trial={id:'trial',admission:{stage:'diagnosis'}};
- for(const tab of ['books','plan','growth','questions'])assert.equal(resolveClassroomNavigation(viewer('student'),trial,'student',tab).tab,'today');
+ for(const tab of ['books','plan','growth','character','billing','questions'])assert.equal(resolveClassroomNavigation(viewer('student'),trial,'student',tab).tab,'today');
  assert.equal(resolveClassroomNavigation(viewer('student'),trial,'student','result').tab,'result');
 });
 
@@ -42,4 +42,16 @@ test('공통 레이아웃은 URL에서 메뉴·학생·추천 친구를 복원�
  assert.deepEqual(classroomLocation('/classroom',new URLSearchParams('view=survey&friend=turtle')),{mode:undefined,tab:'survey',studentId:'',friend:'turtle'});
  assert.equal(classroomLocation('/classroom/admin/unknown',new URLSearchParams()),null);
  assert.equal(classroomLocation('/login',new URLSearchParams()),null);
+});
+
+test('학생과 학부모가 성장·캐릭터·수강 페이지를 직접 열고 새로고침할 수 있다',()=>{
+ for(const role of ['student','parent'])for(const tab of ['growth','character','billing']){
+  assert(availableClassroomTabs(role,viewer(role),regular).includes(tab));
+  assert.deepEqual(resolveClassroomNavigation(viewer(role),regular,role,tab),{mode:role,tab});
+  const path=classroomPath(role,tab);
+  assert.deepEqual(parseClassroomRoute(path.split('/').slice(2)),{mode:role,tab});
+ }
+ assert.equal(classroomPath('student','growth'),'/classroom/student/growth');
+ assert.equal(classroomPath('student','character'),'/classroom/student/character');
+ assert.equal(classroomPath('parent','billing'),'/classroom/parent/billing');
 });
