@@ -16,10 +16,10 @@
 .learning-menu-group.is-open>.learning-menu-trigger{background:#f1f7f5;color:#245e50}
 .learning-menu-trigger>svg{transition:transform .15s;color:#83948e}
 .learning-menu-group.is-open>.learning-menu-trigger>svg{transform:rotate(180deg)}
-.learning-submenu{position:absolute;top:100%;left:0;right:0;display:grid;grid-template-columns:repeat(var(--menu-columns,4),minmax(0,1fr));gap:0;padding:10px 0;background:#fff;border-top:1px solid #e3eae7;border-radius:0 0 10px 10px;box-shadow:0 14px 30px #183d4b1a;max-height:calc(100dvh - 150px);overflow-y:auto}
+.learning-submenu{position:absolute;top:100%;left:0;right:0;display:grid;grid-template-columns:repeat(var(--menu-columns,4),minmax(0,1fr));gap:0;padding:6px 0;background:#fff;border-top:1px solid #e3eae7;border-radius:0 0 10px 10px;box-shadow:0 14px 30px #183d4b1a;max-height:calc(100dvh - 150px);overflow-y:auto}
 .learning-submenu-group{min-width:0}
 .learning-submenu[hidden]{display:none}
-.learning-submenu a{display:flex;align-items:center;gap:8px;min-height:56px;padding:10px var(--menu-inset);border-radius:6px;font-size:14px;font-weight:600;line-height:1.6;color:#445d6c;word-break:keep-all;overflow-wrap:anywhere}
+.learning-submenu a{display:flex;align-items:center;gap:8px;min-height:40px;padding:6px var(--menu-inset);border-radius:6px;font-size:14px;font-weight:600;line-height:1.6;color:#445d6c;word-break:keep-all;overflow-wrap:anywhere}
 .learning-submenu a>svg{display:none}
 .learning-submenu a:hover{background:#f3f7f5;color:#265f4d}
 .learning-submenu a.is-current{background:#e7f3ed;color:#205a45;font-weight:750}
@@ -48,7 +48,7 @@
  .learning-menu-trigger>svg{width:13px;height:13px}
  .learning-menu-group.is-active>.learning-menu-trigger:after{left:calc(50% - 15px)}
  .learning-submenu{max-height:calc(100dvh - 130px)}
- .learning-submenu a{justify-content:center;min-height:64px;padding:8px 5px;font-size:11px;text-align:center}
+ .learning-submenu a{justify-content:center;min-height:44px;padding:4px 5px;font-size:11px;text-align:center}
  .learning-top-layout .topbar{height:auto;min-height:52px;padding:9px 18px}
 }
 @media(max-width:480px){
