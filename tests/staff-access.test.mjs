@@ -3,6 +3,9 @@ import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
 import {readFileSync,readdirSync} from 'node:fs';
 import {STAFF_REGISTRATIONS,loadStaffRegistrations,registeredStaff as matchStaff,staffLoginMatches as matchesLogin,provisionStaffLogin as provisionLogin} from '../app/lib/staff-access.ts';
+import {bindSocialIdentity} from '../app/lib/login-identities.ts';
+import {readSocialSession} from '../app/lib/social-session.ts';
+import {encode} from '@auth/core/jwt';
 const registrations=loadStaffRegistrations(JSON.stringify({'김한조':'owner@example.com','박상우':'manager@example.com','어동선':'eo@example.com','강신의':'kang@example.com','송서균':'song@example.com'}));
 const registeredStaff=(provider,email,verified)=>matchStaff(provider,email,verified,registrations);
 const staffLoginMatches=(user,member)=>matchesLogin(user,member,registrations);
@@ -111,4 +114,61 @@ test('비밀값은 공백·대소문자를 정규화하고 미정 직원은 연�
  const staff=loadStaffRegistrations('{"박상우":" MANAGER@EXAMPLE.COM ","변지석":null}');
  assert.equal(staff.find(s=>s.name==='박상우').email,'manager@example.com');
  assert.equal(staff.find(s=>s.name==='변지석').email,null);
+});
+test('기존 원장 이메일 수정 전후 모두 첫 구글 로그인과 재로그인이 기존 원장 ID·세션으로 연결된다',async()=>{
+ for(const oldEmail of ['legacy@example.com','owner@example.com']){
+  const db=database();member(db,'original-owner','admin',oldEmail);
+  const before=db.sqlite.prepare('SELECT * FROM workspaces').get();
+  for(let attempt=0;attempt<2;attempt++){
+   const userId=await bindSocialIdentity(db,'owner-google','google');
+   const input={userId,identityId:'owner-google',provider:'google',email:'owner@example.com',emailVerified:true};
+   const ownerId=await provisionStaffLogin(db,input);
+   assert.equal(ownerId,'original-owner');
+   const saved=db.sqlite.prepare('SELECT * FROM memberships WHERE user_id=?').get(ownerId);
+   assert.equal(saved.role,'admin');assert.equal(saved.name,'김한조');assert.equal(saved.email,'owner@example.com');
+   assert.equal(saved.student_ids,'["extra-student"]');
+   const secret='owner-test-secret-that-is-longer-than-32-characters',cookieName='orca.session-token';
+   const token=await encode({secret,salt:cookieName,token:{orcaId:ownerId,identityId:'owner-google',provider:'google',email:input.email,emailVerified:true}});
+   const user=await readSocialSession(new Headers({cookie:cookieName+'='+token}),db,secret,cookieName);
+   assert.equal(user.userId,before.owner_id);
+   assert(staffLoginMatches(user,saved));
+   assert.deepEqual(db.sqlite.prepare('SELECT * FROM workspaces').get(),before);
+   assert.equal(db.sqlite.prepare('SELECT count(*) n FROM memberships').get().n,1);
+  }
+ }
+});
+test('원장 구글 계정에 기존 회원·가입 신청·중복 이메일이 있으면 자동 합치지 않는다',async()=>{
+ for(const kind of ['member','pending','duplicate','blocked-owner']){
+  const db=database();member(db,'original-owner',kind==='blocked-owner'?'blocked':'admin','owner@example.com');
+  const userId=await bindSocialIdentity(db,'owner-google','google');
+  if(kind==='member')member(db,userId,'student','owner@example.com');
+  if(kind==='pending'||kind==='rejected')db.sqlite.prepare('INSERT INTO registrations(user_id,workspace_id,name,email,requested_role,status,created_at) VALUES(?,?,?,?,?,?,?)').run(userId,'orca','원장','owner@example.com','student',kind,'2026-11-16');
+  if(kind==='duplicate')member(db,'other-owner-email','student','owner@example.com');
+  const before=db.sqlite.prepare('SELECT * FROM memberships ORDER BY user_id').all();
+  await assert.rejects(()=>provisionStaffLogin(db,{userId,identityId:'owner-google',provider:'google',email:'owner@example.com',emailVerified:true}));
+  assert.deepEqual(db.sqlite.prepare('SELECT * FROM memberships ORDER BY user_id').all(),before);
+  assert.equal(db.sqlite.prepare('SELECT user_id FROM login_identities WHERE id=?').get('owner-google').user_id,userId);
+ }
+});
+test('사전등록된 원장의 회원 미연결·거절된 가입 신청은 보존하며 기존 원장으로 연결한다',async()=>{
+ const db=database();member(db,'original-owner','admin','owner@example.com');
+ const userId=await bindSocialIdentity(db,'owner-google','google');
+ db.sqlite.prepare('INSERT INTO registrations(user_id,workspace_id,name,email,requested_role,status,created_at) VALUES(?,?,?,?,?,?,?)').run(userId,'orca','기존 신청','owner@example.com','student','rejected','2026-11-16');
+ const before=db.sqlite.prepare('SELECT * FROM registrations WHERE user_id=?').get(userId);
+ assert.equal(await provisionStaffLogin(db,{userId,identityId:'owner-google',provider:'google',email:'owner@example.com',emailVerified:true}),'original-owner');
+ assert.equal(db.sqlite.prepare('SELECT user_id FROM login_identities WHERE id=?').get('owner-google').user_id,'original-owner');
+ assert.deepEqual(db.sqlite.prepare('SELECT * FROM registrations WHERE user_id=?').get(userId),before);
+ assert.equal(db.sqlite.prepare('SELECT count(*) n FROM memberships').get().n,1);
+});
+test('거절 신청이 있어도 다른 학원·미검증·일반 회원·기존 회원은 원장으로 연결하지 않는다',async()=>{
+ for(const kind of ['other-workspace','unverified','unregistered','existing-member']){
+  const db=database();member(db,'original-owner','admin','owner@example.com');
+  const userId=await bindSocialIdentity(db,'owner-google','google');
+  db.sqlite.prepare('INSERT INTO registrations(user_id,workspace_id,name,email,requested_role,status,created_at) VALUES(?,?,?,?,?,?,?)').run(userId,kind==='other-workspace'?'other':'orca','기존 신청','owner@example.com','student','rejected','2026-11-16');
+  if(kind==='existing-member')member(db,userId,'student','owner@example.com');
+  const input={userId,identityId:'owner-google',provider:'google',email:kind==='unregistered'?'unknown@example.com':'owner@example.com',emailVerified:kind!=='unverified'};
+  if(kind==='unverified'||kind==='unregistered')assert.equal(await provisionStaffLogin(db,input),userId);
+  else await assert.rejects(()=>provisionStaffLogin(db,input));
+  assert.equal(db.sqlite.prepare('SELECT user_id FROM login_identities WHERE id=?').get('owner-google').user_id,userId);
+ }
 });

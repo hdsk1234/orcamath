@@ -61,7 +61,13 @@ export async function provisionStaffLogin(db:D1Database,login:{userId:string;ide
  if(current&&current.user_id!==targetId)throw Error('기존 회원 기록을 원장 계정에 자동 병합할 수 없습니다.');
  const target=await db.prepare('SELECT * FROM memberships WHERE user_id=?').bind(targetId).first<Member>();
  if(target&&(target.workspace_id!==workspace.id||target.role==='blocked'||(target.role==='admin'&&staff.role!=='admin')))throw Error('기존 회원의 권한 또는 이용 중지 상태를 먼저 확인해 주세요.');
- if(targetId!==login.userId&&await db.prepare('SELECT user_id FROM registrations WHERE user_id=?').bind(login.userId).first())throw Error('기존 가입 신청을 확인한 후 계정을 연결해 주세요.');
+ if(targetId!==login.userId){
+  const request=await db.prepare('SELECT workspace_id,status FROM registrations WHERE user_id=?').bind(login.userId).first<{workspace_id:string;status:string}>();
+  // A rejected signup without a membership has no account privileges to merge.
+  // Keep that history while allowing the explicitly registered owner to sign in.
+  const rejectedOwnerSignup=staff.role==='admin'&&!current&&request?.workspace_id===workspace.id&&request.status==='rejected';
+  if(request&&!rejectedOwnerSignup)throw Error('기존 가입 신청을 확인한 후 계정을 연결해 주세요.');
+ }
  const mapping=await db.prepare('SELECT user_id FROM login_identities WHERE id=? AND provider=?').bind(login.identityId,'google').first<{user_id:string}>();
  if(mapping?.user_id!==login.userId)throw Error('구글 계정 연결 상태를 확인해 주세요.');
  const changed=!target||target.role!==staff.role||target.teacher_id!==staff.teacherId||target.name!==staff.name||target.email!==email;
