@@ -1,12 +1,12 @@
-import {env} from 'cloudflare:workers';
-import {identity,checkOrigin,mutateWorkspace,loadWorkspace,AppError,json,failure} from '../../../lib/server';
-import {requireAiOwner,type AiCase} from '../../../lib/diagnostic-ai';
-import {SUBJECTS,type Subject} from '../../../lib/diagnostic';
-export async function POST(r:Request){try{checkOrigin(r);const {viewer,workspaceId}=await identity();try{requireAiOwner(viewer);}catch(e){throw new AppError(403,(e as Error).message);}const form=await r.formData(),file=form.get('file'),name=String(form.get('name')??'').trim(),subject=String(form.get('subject')) as Subject,caseId=String(form.get('caseId')??'');
- if((!caseId&&(!name||name.length>40||!SUBJECTS.some(s=>s.id===subject)))||!(file instanceof File)||file.type!=='application/pdf'||file.size>12*1024*1024||file.size<1)throw new AppError(400,'학생 이름·과목·12MB 이하의 PDF를 확인해 주세요.');const bytes=await file.arrayBuffer();if(new TextDecoder().decode(bytes.slice(0,5))!=='%PDF-')throw new AppError(400,'PDF를 선택해 주세요.');
- const {workspace}=await loadWorkspace(workspaceId);if(!env.BUCKET)throw new AppError(503,'파일 저장소를 확인해 주세요.');
- if(caseId){const existing=workspace.aiCases?.find(c=>c.id===caseId);if(!existing?.file||existing.run?.status==='running'||existing.run?.status==='approved')throw new AppError(409,'분석이 끝난 미확정 PDF 자료에만 사본을 추가할 수 있어요.');const now=new Date().toISOString(),key=`${workspaceId}/ai-cases/${caseId}/analysis-${crypto.randomUUID()}`;await env.BUCKET.put(key,bytes,{httpMetadata:{contentType:'application/pdf'}});await mutateWorkspace(workspaceId,w=>{const c=w.aiCases?.find(c=>c.id===caseId);if(!c?.file||c.run?.status==='running'||c.run?.status==='approved')throw new AppError(409,'분석 상태가 변경됐어요. 새로고침해 주세요.');c.analysisFile={key,name:'진단검사 분석용 사본.pdf',size:file.size,type:'application/pdf'};c.sourceVersion=now;return {};});return json({caseId});}
- if((workspace.aiCases?.length??0)>=200)throw new AppError(400,'보관된 진단 자료 한도입니다.');const id=crypto.randomUUID(),key=`${workspaceId}/ai-cases/${id}/source`,createdAt=new Date().toISOString();await env.BUCKET.put(key,bytes,{httpMetadata:{contentType:'application/pdf'},customMetadata:{name:'진단검사 원본.pdf'}});
- const c:AiCase={id,name,subject,createdAt,sourceVersion:createdAt,file:{key,name:'진단검사 원본.pdf',size:file.size,type:'application/pdf'}};await mutateWorkspace(workspaceId,w=>{(w.aiCases??=[]).push(c);return {};});return json({caseId:id});
- }catch(e){return failure(e);}}
-export async function GET(r:Request){try{const {viewer,workspaceId}=await identity();try{requireAiOwner(viewer);}catch(e){throw new AppError(403,(e as Error).message);}const {workspace}=await loadWorkspace(workspaceId),c=workspace.aiCases?.find(x=>x.id===new URL(r.url).searchParams.get('id'));if(!c?.file)throw new AppError(404,'원본을 찾을 수 없어요.');const object=await env.BUCKET?.get(c.file.key);if(!object)throw new AppError(404,'원본을 찾을 수 없어요.');return new Response(object.body,{headers:{'Content-Type':'application/pdf','Content-Disposition':"inline; filename*=UTF-8''diagnostic-original.pdf",'Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'none'; sandbox"}});}catch(e){return failure(e);}}
+import {identity,checkOrigin,failure,AppError} from '../../../lib/server';
+import {requireAiOwner} from '../../../lib/diagnostic-ai';
+import {FILE_ATTACHMENTS_MESSAGE} from '../../../lib/file-storage';
+
+async function unavailable(){try{
+ const {viewer}=await identity();
+ try{requireAiOwner(viewer);}catch(error){throw new AppError(403,error instanceof Error?error.message:'접근 권한이 없습니다.');}
+ throw new AppError(503,FILE_ATTACHMENTS_MESSAGE);
+}catch(error){return failure(error);}}
+
+export async function GET(){return unavailable();}
+export async function POST(request:Request){try{checkOrigin(request);}catch(error){return failure(error);}return unavailable();}

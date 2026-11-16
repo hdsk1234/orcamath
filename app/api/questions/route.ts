@@ -1,7 +1,7 @@
 import {requireRegular,requireStudentRegular} from '../../lib/server';
-import {env} from 'cloudflare:workers';
+import {FILE_ATTACHMENTS_MESSAGE} from '../../lib/file-storage';
 import {identity,canStudent,staff,checkOrigin,mutateWorkspace,loadWorkspace,failure,json,AppError} from '../../lib/server';
-import {canWriteRecords,type Attachment} from '../../lib/domain';
+import {canWriteRecords} from '../../lib/domain';
 import {canReadQuestion,canManageQuestion,type QuestionVisibility} from '../../lib/questions';
 const clean=(value:unknown,max:number)=>typeof value==='string'?value.trim().slice(0,max):'';
 export async function POST(request:Request){try{
@@ -21,12 +21,7 @@ export async function POST(request:Request){try{
    w.questions.push({id:questionId,studentId,studentName:student.name,title,body,topic,visibility,createdAt:now,updatedAt:now,files:[],replies:[],teacherRequested:true,resolved:false,demo:student.demo});return {};
   });return json({questionId});
  }
- let attachments:Attachment[]=[];
- if(action==='attachments'){
-  const {workspace}=await loadWorkspace(workspaceId);requireRegular(workspace,viewer);const q=workspace.questions?.find(q=>q.id===id);if(!q||!canReadQuestion(viewer,q))throw new AppError(404,'질문을 찾을 수 없습니다.');if(!canManageQuestion(viewer,q))throw new AppError(403,'본인의 질문에만 사진을 연결할 수 있습니다.');
-  const files=b.files as Attachment[];if(!Array.isArray(files)||files.length>3)throw new AppError(400,'사진은 최대 3장입니다.');
-  for(const file of files){if(typeof file?.key!=='string'||!file.key.startsWith(`${workspaceId}/questions/${q.id}/`))throw new AppError(400,'연결할 사진을 확인해 주세요.');const object=await env.BUCKET?.get(file.key);const type=object?.httpMetadata?.contentType;if(!object||!type||!['image/jpeg','image/png','image/webp'].includes(type)||object.size>3*1024*1024)throw new AppError(400,'3MB 이하의 질문 사진을 선택해 주세요.');attachments.push({key:file.key,name:object.customMetadata?.name??'질문 사진',size:object.size,type});}
- }
+ if(action==='attachments')throw new AppError(503,FILE_ATTACHMENTS_MESSAGE);
  const updated=await mutateWorkspace(workspaceId,w=>{
   const q=w.questions?.find(q=>q.id===id);if(!q||!canReadQuestion(viewer,q))throw new AppError(404,'질문을 찾을 수 없습니다.');
   if(action==='reply'){
@@ -38,9 +33,7 @@ export async function POST(request:Request){try{
    if(action==='visibility'){if(!['private','class'].includes(String(b.visibility)))throw new AppError(400,'공개 범위를 선택해 주세요.');q.visibility=b.visibility as QuestionVisibility;}
    else if(action==='teacher_request'){q.teacherRequested=true;q.resolved=false;}
    else if(action==='resolve'){q.resolved=b.resolved===true;if(q.resolved)q.teacherRequested=false;}
-   else if(action==='attachments'){
-    q.files=attachments;
-   }else throw new AppError(400,'지원하지 않는 질문 작업입니다.');
+   else throw new AppError(400,'지원하지 않는 질문 작업입니다.');
   }q.updatedAt=now;return {questionId:q.id};
  });return json(updated.result);
  }catch(e){return failure(e);}}

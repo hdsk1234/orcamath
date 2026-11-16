@@ -1,15 +1,10 @@
-import {allQuestionIds} from '../../lib/diagnostic';
-import {diagnosticAccess} from '../../lib/crm';
-import {requireRegular,requireStudentRegular} from '../../lib/server';
-import {env} from 'cloudflare:workers';
-import {identity,canStudent,staff,checkOrigin,failure,json,AppError,loadWorkspace} from '../../lib/server';
+import {identity,checkOrigin,failure,AppError} from '../../lib/server';
 import {canWriteRecords} from '../../lib/domain';
-import {canReadQuestion,canManageQuestion} from '../../lib/questions';
-export async function POST(r:Request){try{checkOrigin(r);const {viewer,workspaceId}=await identity();if(!canWriteRecords(viewer.role))throw new AppError(403,'학부모 계정은 제출 파일을 조회할 수 있으며 업로드할 수 없습니다.');if(!env.BUCKET)throw new AppError(503,'파일 저장소를 연결하는 중입니다.');const form=await r.formData(),file=form.get('file');if(!(file instanceof File)||!file.size)throw new AppError(400,'파일을 선택해 주세요.');if(file.size>12*1024*1024)throw new AppError(400,'파일 하나당 12MB 이하입니다.');
- if(!['application/pdf','image/jpeg','image/png','image/webp','text/plain','application/vnd.openxmlformats-officedocument.wordprocessingml.document'].includes(file.type))throw new AppError(400,'PDF·사진·텍스트·Word 파일을 사용해 주세요.');const {workspace}=await loadWorkspace(workspaceId);if(form.get('scope')!=='diagnostic')requireRegular(workspace,viewer);let prefix:string;
- if(form.get('scope')==='diagnostic'){const id=String(form.get('studentId')??''),target=workspace.students.find(s=>s.id===id);if(!target||!diagnosticAccess(viewer,target)||viewer.role==='assistant')throw new AppError(403,'담당 진단검사에만 파일을 올릴 수 있어요.');if(!target.diagnostic||!['application/pdf','image/jpeg','image/png','image/webp'].includes(file.type))throw new AppError(400,'검사를 시작하고 사진·PDF를 선택해 주세요.');const qid=String(form.get('questionId')??'');if(!allQuestionIds(target.diagnostic).includes(qid)||target.diagnostic.submissions[qid.slice(0,qid.lastIndexOf('-'))])throw new AppError(400,'작성 중인 문항에만 파일을 올릴 수 있어요.');prefix=`${workspaceId}/diagnostics/${id}/`;}
- else if(form.get('scope')==='question'){const id=String(form.get('questionId')??''),q=workspace.questions?.find(q=>q.id===id);if(!q||!canReadQuestion(viewer,q))throw new AppError(404,'질문을 찾을 수 없습니다.');if(!canManageQuestion(viewer,q))throw new AppError(403,'본인의 질문에만 사진을 올릴 수 있습니다.');if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>3*1024*1024)throw new AppError(400,'질문 사진은 JPEG·PNG·WebP 형식으로 3MB 이하입니다.');prefix=`${workspaceId}/questions/${id}/`;}
- else if(form.get('scope')==='material'){staff(viewer,['admin','manager']);const id=String(form.get('themeId')??'');if(!workspace.themes.some(t=>t.id===id))throw new AppError(400,'테마를 확인해 주세요.');prefix=`${workspaceId}/materials/${id}/`;}
- else{const id=String(form.get('studentId')??'');canStudent(viewer,id);const target=workspace.students.find(s=>s.id===id);if(target)requireStudentRegular(target);if(!workspace.students.some(s=>s.id===id))throw new AppError(404,'학생을 찾을 수 없습니다.');prefix=`${workspaceId}/students/${id}/`;}
- const name=file.name.replace(/[\r\n\\/]/g,'_').slice(0,150),key=prefix+crypto.randomUUID();await env.BUCKET.put(key,await file.arrayBuffer(),{httpMetadata:{contentType:file.type},customMetadata:{name}});return json({file:{key,name,size:file.size,type:file.type}});
- }catch(e){return failure(e);}}
+import {FILE_ATTACHMENTS_MESSAGE} from '../../lib/file-storage';
+
+export async function POST(request:Request){try{
+ checkOrigin(request);
+ const {viewer}=await identity();
+ if(!canWriteRecords(viewer.role))throw new AppError(403,'학부모 계정은 파일을 업로드할 수 없습니다.');
+ throw new AppError(503,FILE_ATTACHMENTS_MESSAGE);
+}catch(error){return failure(error);}}

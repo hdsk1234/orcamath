@@ -1,7 +1,8 @@
+import {FILE_ATTACHMENTS_MESSAGE} from '../../lib/file-storage';
 import {env} from 'cloudflare:workers';
 import {AppError,identity,loadWorkspace,mutateWorkspace,checkOrigin,json,failure} from '../../lib/server';
 import {AI_MODEL,AI_PROMPT_VERSION,beginAiRun,saveAiDraft,approveAiDraft,normalizeAiDraft,validateGeneratedStudentCopy,requireAiOwner,rewriteStudentCopy,type AiCase} from '../../lib/diagnostic-ai';
-import {startAiDraft,pollAiDraft,uploadAiFile,AiRequestError,type AiContent} from '../../lib/diagnostic-ai-request';
+import {startAiDraft,pollAiDraft,AiRequestError,type AiContent} from '../../lib/diagnostic-ai-request';
 import {ORIGINAL_SURVEY,SUBJECTS} from '../../lib/diagnostic';
 import {MATH_BANK} from '../../lib/diagnostic-bank';
 const apiKey=()=>String((env as unknown as Record<string,unknown>).OPENAI_API_KEY??'');
@@ -33,12 +34,10 @@ export async function POST(r:Request){try{
   }catch(e){throw new AppError(409,(e as Error).message);}return {};});return json({ok:true,cases:out.workspace.aiCases??[]});
  }
  if(op!=='analyze')throw new AppError(400,'진단 작업을 확인해 주세요.');if(!apiKey())throw new AppError(503,'AI 연결키 설정을 기다리고 있어요.');
- const reserved=await mutateWorkspace(workspaceId,w=>{const c=w.aiCases?.find(x=>x.id===b.caseId);if(!c)throw new AppError(404,'진단 자료를 찾을 수 없어요.');if(c.run?.status==='approved')throw new AppError(409,'확정한 결과는 보존돼요. 새 검사를 진행해 주세요.');try{return {case:structuredClone(c),runId:beginAiRun(c,viewer)};}catch(e){throw new AppError(409,(e as Error).message);}}),c=reserved.result.case,runId=reserved.result.runId;
+ const reserved=await mutateWorkspace(workspaceId,w=>{const c=w.aiCases?.find(x=>x.id===b.caseId);if(!c)throw new AppError(404,'진단 자료를 찾을 수 없어요.');if(c.run?.status==='approved')throw new AppError(409,'확정한 결과는 보존돼요. 새 검사를 진행해 주세요.');if(c.file||c.analysisFile||Object.values(c.snapshot?.answers??{}).some(answer=>answer.files?.length))throw new AppError(503,FILE_ATTACHMENTS_MESSAGE);try{return {case:structuredClone(c),runId:beginAiRun(c,viewer)};}catch(e){throw new AppError(409,(e as Error).message);}}),c=reserved.result.case,runId=reserved.result.runId;
  try{
   const subjects=c.snapshot?.subjects??[c.subject],questions=MATH_BANK.filter(q=>subjects.some(s=>s===q.subject)),content:AiContent[]=[{type:'input_text',text:JSON.stringify({source:'진단 원본 자료',subjects:subjects.map(id=>SUBJECTS.find(s=>s.id===id)?.name),survey:ORIGINAL_SURVEY,questions:questions.map(q=>({id:q.id,prompt:q.prompt,topic:q.topic,sourcePage:q.sourcePage})),...(c.snapshot?{studentAnswers:c.snapshot.survey,mathAnswers:Object.fromEntries(Object.entries(c.snapshot.answers).map(([id,a])=>[id,{text:a.text,unknown:a.unknown}]))}:{note:'첨부 PDF의 학생 응답과 풀이를 분석하세요. 파일명과 이름을 추론 근거로 사용하지 마세요.'})})}];
-  let bytes=0;const addFile=async(f:{key:string;type:string})=>{if(!f.key.startsWith(workspaceId+'/'))throw new Error('첨부 경로를 확인해 주세요.');const obj=await env.BUCKET?.get(f.key);if(!obj)throw new Error('첨부 원본 파일을 찾을 수 없어요.');bytes+=obj.size;if(bytes>24*1024*1024)throw new Error('사진·PDF 총량이 많아요. 과목별로 나누어 검토해 주세요.');const id=await uploadAiFile(apiKey(),await obj.arrayBuffer(),f.type);await mutateWorkspace(workspaceId,w=>{const run=w.aiCases?.find(x=>x.id===c.id)?.run;if(run?.id===runId)(run.providerFileIds??=[]).push(id);return {};});content.push(f.type==='application/pdf'?{type:'input_file',file_id:id}:{type:'input_image',file_id:id,detail:'high'});};
-  if(c.analysisFile??c.file)await addFile((c.analysisFile??c.file)!);
-  if(c.snapshot)for(const q of questions){content.push({type:'input_text',text:q.id+' 문제 원문'});content.push({type:'input_image',image_url:new URL('/diagnostic/'+q.image.path,r.url).href,detail:'high'});for(const f of c.snapshot.answers[q.id]?.files??[]){content.push({type:'input_text',text:q.id+' 학생 첨부 답안'});await addFile(f);}}
+  if(c.snapshot)for(const q of questions){content.push({type:'input_text',text:q.id+' 문제 원문'});content.push({type:'input_image',image_url:new URL('/diagnostic/'+q.image.path,r.url).href,detail:'high'});}
   const result=await startAiDraft(apiKey(),content);
   await mutateWorkspace(workspaceId,w=>{const current=w.aiCases?.find(x=>x.id===c.id);if(!current?.run||current.run.id!==runId)throw new AppError(409,'새 분석이 시작되어 이전 응답을 적용하지 않았어요.');current.run.providerId=result.responseId;return {};});return json({ok:true,caseId:c.id});
  }catch(e){await mutateWorkspace(workspaceId,w=>{const current=w.aiCases?.find(x=>x.id===c.id);if(current?.run?.id===runId)Object.assign(current.run,{status:'failed',finishedAt:new Date().toISOString(),error:e instanceof AiRequestError?e.message:e instanceof Error&&!/fetch|timeout|abort/i.test(e.message)?e.message:'분석 연결이 끊겼어요. 원본 자료는 보존돼요. 상태를 확인하고 다시 실행해 주세요.',...(e instanceof AiRequestError&&e.usage?{usage:e.usage}:{})});return {};});throw new AppError(503,e instanceof AiRequestError?e.message:'AI 분석을 완료하지 못했어요. 상태를 확인해 주세요.');}

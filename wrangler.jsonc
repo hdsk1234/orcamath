@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "orca-math",
+  "main": "worker.ts",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "orca-db",
+      "database_id": "0548e4db-0731-41d3-96ab-38e5943d9603",
+      "migrations_dir": "drizzle"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
