@@ -1,5 +1,5 @@
 import type {Workspace,Viewer} from './domain.ts';
-export type ClassroomData={workspace:Workspace;viewer:Viewer;revision:number};
+export type ClassroomData={workspace:Workspace;viewer:Viewer;revision:number;teacherViewers?:Viewer[]};
 export class ClassroomStateError extends Error{
  status:number;
  constructor(status:number,message:string){super(message);this.status=status;}

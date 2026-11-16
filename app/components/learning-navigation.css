@@ -55,3 +55,11 @@
  .learning-menu-trigger{font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.learning-menu-trigger>svg{transition:none}}
+
+@media(max-width:480px){
+ .management-header .learning-menu-trigger{font-size:11px;gap:2px;padding:0 2px}
+ .management-header .learning-menu-trigger>svg{display:none}
+}
+.topbar-actions:has(.teacher-view-picker){flex-wrap:wrap;gap:10px}
+.teacher-view-picker{width:auto;max-width:180px;font-size:12px;padding:7px 9px}
+@media(max-width:760px){.topbar-actions:has(.teacher-view-picker){width:100%;justify-content:flex-end}.teacher-view-picker{max-width:150px;font-size:11px}}
