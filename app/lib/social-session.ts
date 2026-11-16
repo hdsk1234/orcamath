@@ -6,6 +6,8 @@ export type OrcaUser={
  displayName:string;
  email:string;
  fullName:string|null;
+ provider?:string;
+ emailVerified?:boolean;
 };
 
 export async function readSocialSession(requestHeaders:Headers,db:D1Database|undefined,secret:string,cookieName:string):Promise<OrcaUser|null>{
@@ -17,6 +19,6 @@ export async function readSocialSession(requestHeaders:Headers,db:D1Database|und
   if(!token||typeof token.orcaId!=='string'||typeof token.identityId!=='string'||!validProvider(token.provider))return null;
   const mapping=await db.prepare('SELECT user_id FROM login_identities WHERE id=? AND provider=?').bind(token.identityId,token.provider).first<{user_id:string}>();
   if(mapping?.user_id!==token.orcaId)return null;
-  return {userId:token.orcaId,displayName:typeof token.name==='string'&&token.name?token.name:'새 회원',email:typeof token.email==='string'?token.email:'',fullName:typeof token.name==='string'?token.name:null};
+  return {userId:token.orcaId,displayName:typeof token.name==='string'&&token.name?token.name:'새 회원',email:typeof token.email==='string'?token.email:'',provider:token.provider,emailVerified:token.emailVerified===true,fullName:typeof token.name==='string'?token.name:null};
  }catch{return null;}
 }

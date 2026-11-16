@@ -5,7 +5,7 @@ import {readSocialSession} from '../app/lib/social-session.ts';
 
 const secret='session-test-secret-'.repeat(3);
 const cookieName='__Secure-orca.session-token';
-const tokenData={orcaId:'member-1',identityId:'social-1',provider:'google',name:'회원',email:'member@example.com'};
+const tokenData={orcaId:'member-1',identityId:'social-1',provider:'google',emailVerified:true,name:'회원',email:'member@example.com'};
 const db={prepare(){return {bind(id,provider){return {async first(){return id==='social-1'&&provider==='google'?{user_id:'member-1'}:null;}};}};}};
 const authenticatedHeaders={
  'oai-authenticated-user-id':'owner',
@@ -23,7 +23,7 @@ test('플랫폼 인증 헤더·로컬 모의 로그인 쿠키·Bearer 토큰만�
 
 test('유효한 소셜 세션은 플랫폼 헤더와 무관하게 기존 회원 ID로 로그인한다',async()=>{
  const user=await readSocialSession(await sessionHeaders(),db,secret,cookieName);
- assert.deepEqual(user,{userId:'member-1',displayName:'회원',email:'member@example.com',fullName:'회원'});
+ assert.deepEqual(user,{userId:'member-1',displayName:'회원',email:'member@example.com',provider:'google',emailVerified:true,fullName:'회원'});
 });
 
 test('회원 연결 불일치·잘못된 공급자·키·DB 없는 세션은 거부한다',async()=>{

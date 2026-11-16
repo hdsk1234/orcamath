@@ -3,6 +3,7 @@
 Vinext·React 기반 학습관리 서비스를 Cloudflare Workers와 D1으로 운영합니다.
 Worker 이름은 `orca-math`, D1 이름은 `orca-db`, 코드의 DB 연결 이름은 `DB`입니다.
 `wrangler.jsonc`에 기존 D1의 Database ID와 정적 파일 연결을 설정합니다.
+운영 주소는 `https://orca-math.hdsk123489.workers.dev`입니다.
 
 ## 개발 환경
 
@@ -43,17 +44,18 @@ npm run deploy
 
 `db:migrate:remote`는 `drizzle`의 미적용 마이그레이션을 운영 D1에 적용합니다.
 기존 데이터 이전은 별도 작업입니다. 원장 계정 초기화와 기존 회원의 소셜
-로그인 연결도 운영 전환 전에 확인해야 합니다.
+로그인 연결도 운영 전환 전에 확인해야 합니다. 직원 계정은 서버의
+`app/lib/staff-access.ts`에 구글 이메일·역할·담당 강사를 사전등록합니다.
+등록된 직원은 구글 인증 후 승인 없이 연결되며, 이메일 미정인 직원은
+등록 후 이용할 수 있습니다. 변경 전 직원 세션은 재로그인이 필요합니다.
 `deploy`는 새 Worker 코드를 Cloudflare에 올립니다.
 
 ## 로그인과 비밀값
 
-운영 주소가 정해지면 `ORCA_LOGIN_ORIGIN`을 해당 HTTPS 주소로 설정하고
-구글·카카오·네이버 개발자센터에 실제 콜백 주소를 등록합니다.
+현재 구글 로그인만 활성화합니다. `ORCA_LOGIN_ORIGIN`은
+`https://orca-math.hdsk123489.workers.dev`이며, 구글 콜백 주소는 다음과 같습니다.
 
-- `/api/auth/callback/google`
-- `/api/auth/callback/kakao`
-- `/api/auth/callback/naver`
+- `https://orca-math.hdsk123489.workers.dev/api/auth/callback/google`
 
 세션 비밀키는 Cloudflare Secrets에 등록합니다.
 
@@ -64,7 +66,7 @@ npx wrangler secret put ORCA_LOGIN_SECRET
 사용할 공급자의 `<공급자>_CLIENT_ID`, `<공급자>_CLIENT_SECRET`,
 `<공급자>_LOGIN_ENABLED=true`를 설정합니다. 공급자 접두사는 `GOOGLE`,
 `KAKAO`, `NAVER`입니다. 세부 사항은 `LOGIN-OPERATIONS.md`를 참고하세요.
-AI 진단을 사용할 경우 `OPENAI_API_KEY`도 Secrets에 등록합니다.
+AI 진단 연결과 `OPENAI_API_KEY` 등록은 보류 상태입니다.
 운영 비밀값은 소스와 빌드 파일에 넣지 않습니다.
 
 ## 파일 기능

@@ -8,7 +8,6 @@ import {diagnosis} from '../../lib/domain';
 import {diagnosticAccess,regularStudent,finishDiagnostic} from '../../lib/crm';
 import {startTutorial,TUTORIAL_STEPS} from '../../lib/study-guide';
 import {submissionTiming,validWake,reviewedSubmission} from '../../lib/submission-time';
-import {staffForName} from '../../lib/staff-directory';
 import {addDays} from '../../lib/domain';
 import {TEACHERS,baseFee} from '../../lib/billing';
 import {canAssignRole} from '../../lib/permissions';
@@ -26,9 +25,9 @@ export async function POST(request:Request){try{
  if(viewer.role==='assistant'&&['profile','survey','diagnostic'].includes(action))throw new AppError(403,'조교는 학생 설정과 진단 설문을 변경할 수 없습니다.');
  if(!canWriteRecords(viewer.role))throw new AppError(403,'학부모는 연결된 자녀의 기록을 조회할 수 있습니다. 제출과 수정은 학생 또는 담당자가 진행합니다.');
  if(action==='invite'){
-  const consultant=viewer.role==='teacher'&&viewer.teacherId==='byun';if(!consultant)staff(viewer,['admin','manager']);if(consultant&&(b.staffName||!['student','parent'].includes(String(b.role))))throw new AppError(403,'상담자는 본인 상담 학생·학부모만 초대할 수 있어요.');const member=staffForName(clean(b.staffName,40));if(b.staffName&&!member)throw new AppError(400,'등록된 직원 이름을 확인해 주세요.');const role=(member?.role??String(b.role??'student')) as Role;if((!consultant&&!canAssignRole(viewer,role))||!['manager','student','parent','teacher','assistant'].includes(role))throw new AppError(400,'초대 역할을 확인해 주세요.');const linked=role==='student'||role==='parent',studentId=linked?clean(b.studentId,80):null;
+  const consultant=viewer.role==='teacher'&&viewer.teacherId==='byun';if(!consultant)staff(viewer,['admin','manager']);if(consultant&&(b.staffName||!['student','parent'].includes(String(b.role))))throw new AppError(403,'상담자는 본인 상담 학생·학부모만 초대할 수 있어요.');if(b.staffName)throw new AppError(400,'직원은 사전등록된 구글 이메일로 로그인해 주세요.');const role=String(b.role??'student') as Role;if((!consultant&&!canAssignRole(viewer,role))||!['student','parent','assistant'].includes(role))throw new AppError(400,'초대 역할을 확인해 주세요.');const linked=role==='student'||role==='parent',studentId=linked?clean(b.studentId,80):null;
   if(linked){const {workspace}=await loadWorkspace(workspaceId);if(consultant&&!workspace.students.some(s=>s.id===studentId&&!s.demo&&s.admission?.consultantId==='byun'&&(workspace.leads??[]).some(l=>l.studentId===s.id&&l.id===s.admission!.leadId)))throw new AppError(403,'본인 상담에서 만든 진단 계정만 초대할 수 있어요.');if(!workspace.students.some(s=>s.id===studentId&&!s.demo))throw new AppError(400,'실제 등록한 학생을 선택해 주세요.');}
-  const code=crypto.randomUUID().replaceAll('-','').slice(0,16).toUpperCase();await database().prepare('INSERT INTO invitations (hash,workspace_id,role,student_id,teacher_id,staff_name,expires_at) VALUES (?,?,?,?,?,?,?)').bind(await sha(code),workspaceId,role,studentId,member?.teacherId??null,member?.name??null,new Date(Date.now()+7*86400000).toISOString()).run();return json({code,expiresIn:'7일',role});
+  const code=crypto.randomUUID().replaceAll('-','').slice(0,16).toUpperCase();await database().prepare('INSERT INTO invitations (hash,workspace_id,role,student_id,teacher_id,staff_name,expires_at) VALUES (?,?,?,?,?,?,?)').bind(await sha(code),workspaceId,role,studentId,null,null,new Date(Date.now()+7*86400000).toISOString()).run();return json({code,expiresIn:'7일',role});
  }
  const studentId=clean(b.studentId,80);if(studentId){if(['survey','assessment','profile','diagnostic','reportGuidance'].includes(action)){const {workspace}=await loadWorkspace(workspaceId),s=workspace.students.find(s=>s.id===studentId);if(!s||!diagnosticAccess(viewer,s))throw new AppError(403,'담당 진단 기록만 이용할 수 있어요.');if(action==='profile'&&!canAccessStudentLocal(viewer,s.id)&&['name','startDate','zoomTime','wakeTime','writingCount','zoomDays','selected'].some(k=>b[k]!==undefined))throw new AppError(403,'상담자는 담당 진단 평가만 조정할 수 있어요.');}else canStudent(viewer,studentId);}
  const updated=await mutateWorkspace(workspaceId,w=>{

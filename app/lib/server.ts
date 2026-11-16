@@ -1,3 +1,4 @@
+import {staffLoginMatches} from './staff-access';
 import {regularStudent,diagnosticAccess} from './crm';
 import {reconcileFirstPayments} from './admissions';
 import {assignedStudentIds} from './permissions';
@@ -6,21 +7,19 @@ import {reconcileScholarships} from './scholarships';
 import {reconcileRenewalInvoices} from './operations';
 import { env } from 'cloudflare:workers';
 import { getOrcaUser } from './social-auth';
-import { seedWorkspace, canAccessStudent, visibleWorkspace, type Workspace, type Viewer, type Role } from './domain';
+import { canAccessStudent, visibleWorkspace, type Workspace, type Viewer, type Role } from './domain';
 export class AppError extends Error { constructor(public status:number,message:string){super(message);} }
 export function database(){if(!env.DB)throw new AppError(503,'데이터 저장소를 연결하는 중입니다.');return env.DB;}
 export async function authenticated(){const user=await getOrcaUser();if(!user)throw new AppError(401,'로그인이 필요합니다.');return user;}
-export async function identity(bootstrap=false){
+export async function identity(){
  const user=await authenticated();const db=database();
- if(bootstrap){
-  await db.prepare('INSERT OR IGNORE INTO workspaces (id,owner_id,data,revision,created_at) VALUES (?,?,?,?,?)').bind('orca',user.userId,JSON.stringify(seedWorkspace()),0,new Date().toISOString()).run();
-  await db.prepare('INSERT OR IGNORE INTO memberships (user_id,workspace_id,role,student_id,name) SELECT ?,id,?,NULL,? FROM workspaces WHERE id=? AND owner_id=?').bind(user.userId,'admin',user.displayName,'orca',user.userId).run();
- }
+
  const m=await db.prepare('SELECT user_id,workspace_id,role,student_id,name,email,teacher_id,student_ids FROM memberships WHERE user_id=?').bind(user.userId).first<{user_id:string;workspace_id:string;role:Role;student_id:string|null;name:string;email:string|null;teacher_id:string|null;student_ids:string}>();
  if(!m)throw new AppError(403,'가입 승인 신청 또는 초대코드로 학원 계정을 연결해 주세요.');
  if(!['admin','manager','teacher','assistant','student','parent'].includes(m.role))throw new AppError(403,'이 계정의 이용 권한이 중지되었습니다.');
  const owner=await db.prepare('SELECT owner_id FROM workspaces WHERE id=?').bind(m.workspace_id).first<{owner_id:string}>();
  if(m.role==='admin'&&owner?.owner_id!==user.userId)throw new AppError(403,'원장 계정의 권한을 확인해 주세요.');
+ if(!staffLoginMatches(user,m))throw new AppError(403,'사전등록된 구글 이메일로 다시 로그인해 주세요. 직원 이메일이 미정이면 먼저 등록이 필요합니다.');
  if(user.email)await db.prepare('UPDATE memberships SET email=? WHERE user_id=? AND (email IS NULL OR email<>?)').bind(user.email,user.userId,user.email).run();
  const {workspace}=await loadWorkspace(m.workspace_id);let explicit:string[]=[];try{const ids=JSON.parse(m.student_ids);if(Array.isArray(ids))explicit=ids.filter((id:unknown)=>typeof id==='string');}catch{}
  return {viewer:{userId:user.userId,name:m.name,role:m.role,studentId:m.student_id,email:user.email||m.email||'',teacherId:m.teacher_id,studentIds:assignedStudentIds(m.role,m.teacher_id,explicit,workspace.students)} satisfies Viewer,workspaceId:m.workspace_id};

@@ -13,7 +13,7 @@ import {installBillingExamples} from '../../lib/billing';
 import {installQuestionExamples} from '../../lib/questions';
 import {env} from 'cloudflare:workers';
 import {needsScholarshipSync} from '../../lib/scholarships';
-export async function GET(){try{const {viewer,workspaceId}=await identity(true);let state=await loadWorkspace(workspaceId);
+export async function GET(){try{const {viewer,workspaceId}=await identity();let state=await loadWorkspace(workspaceId);
  if(viewer.role==='admin'&&(state.workspace.billingExampleVersion!==1||state.workspace.questionExampleVersion!==2||state.workspace.companionExampleVersion!==1||(state.workspace.crmExampleVersion??0)<CRM_EXAMPLE_VERSION||state.workspace.admissionExampleVersion!==1)){const result=await mutateWorkspace(workspaceId,w=>{installBillingExamples(w);installQuestionExamples(w);installCompanionExamples(w,studentStats);installAdmissionExamples(w);installLeadExamples(w);return {};});state={workspace:result.workspace,revision:result.revision};}
  if(needsCompanionSync(state.workspace)||needsScholarshipSync(state.workspace)){const result=await mutateWorkspace(workspaceId,()=>({}));state={workspace:result.workspace,revision:result.revision};}
  if(viewer.role==='admin'&&state.workspace.studyGuideVersion!==1){const result=await mutateWorkspace(workspaceId,w=>{installStudyGuideExamples(w);return {};});state={workspace:result.workspace,revision:result.revision};}
