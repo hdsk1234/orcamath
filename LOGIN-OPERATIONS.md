@@ -28,17 +28,31 @@
 
 ## 직원 이메일 사전등록
 
-서버 전용 `app/lib/staff-access.ts`의 `STAFF_REGISTRATIONS`를 변경하고 배포합니다.
-관리자 화면은 이 목록을 조회만 하며 이메일 목록은 일반 공개 클라이언트 번들에 포함하지 않습니다.
+직원 이름·역할·담당 강사는 서버 전용 `app/lib/staff-access.ts`에서 관리하고,
+실제 이메일은 Cloudflare Secret `ORCA_STAFF_EMAILS`에만 저장합니다.
+소스·테스트·문서·`wrangler.jsonc`에는 실제 직원 로그인 이메일을 넣지 않습니다.
 
-| 이름 | 역할 | 구글 이메일 | 담당 강사 |
-| --- | --- | --- | --- |
-| 김한조 | 원장 | 미정 (`null`) | — |
-| 박상우 | 총괄관리자 | hdsk123489@gmail.com | — |
-| 어동선 | 강사 | dongsun.eo@gmail.com | eo |
-| 강신의 | 강사 | 미정 (`null`) | kang |
-| 송서균 | 강사 | 미정 (`null`) | song |
-| 변지석 | 강사 | 미정 (`null`) | byun |
+기존 직원의 접근을 유지하려면 원장·총괄·강사를 포함한 전체 확정 목록을 한 번에 등록합니다.
+미정 직원은 생략하거나 `null`로 지정합니다. 아래 주소는 예시이며 실제 값으로 바꿉니다.
+
+```json
+{"김한조":"owner@example.com","박상우":"manager@example.com","어동선":"eo@example.com","강신의":"kang@example.com","송서균":"song@example.com","변지석":null}
+```
+
+프로젝트 폴더에서 다음 명령을 실행하고, 입력 프롬프트에 한 줄 JSON을 붙여넣습니다.
+실제 JSON을 명령 인자로 전달하거나 Git에 저장하지 않습니다.
+
+```sh
+npx wrangler secret put ORCA_STAFF_EMAILS --config wrangler.jsonc
+npm run deploy
+```
+
+대시보드에서는 Workers & Pages → `orca-math` → Settings → Variables and Secrets에서
+`ORCA_STAFF_EMAILS`를 Secret 형식으로 등록해도 됩니다.
+로컬 개발은 Git에서 제외된 `.dev.vars`에 같은 이름으로 설정합니다.
+비밀값 누락·형식 오류·중복 이메일·알 수 없는 직원 이름은 직원 권한을 허용하지 않습니다.
+Secret을 먼저 등록한 후 새 코드를 배포하고, 직원은 구글로 다시 로그인합니다.
+DB 마이그레이션과 구글 OAuth 콜백 변경은 필요하지 않습니다.
 
 - 구글 OAuth 응답의 `email_verified === true`인 이메일을 확인하며 대소문자·양끝 공백만 정규화합니다. 별칭·점·`+` 주소를 추측해 합치지 않습니다.
 - 확정 이메일로 첫 로그인하면 승인 없이 역할·담당 강사를 설정하고, 기존 회원 ID·추가 학생 배정·학습·정산 기록은 보존합니다. 자동 연결 이력은 회원 권한 변경 기록에 남습니다.
@@ -53,6 +67,7 @@
 
 운영 비밀값은 Cloudflare Workers Secrets에 저장합니다. 로컬 비밀값은 Git에서 제외하는 `.dev.vars`에 저장합니다.
 
+- `ORCA_STAFF_EMAILS`: 직원 이름을 구글 이메일에 연결하는 JSON 비밀값
 - `ORCA_LOGIN_SECRET`: 암호화 쿠키용 서버 비밀키
 - `ORCA_LOGIN_ORIGIN`: 실제 Cloudflare 운영 주소로 설정
 - `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_LOGIN_ENABLED`

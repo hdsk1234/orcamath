@@ -45,7 +45,8 @@ npm run deploy
 `db:migrate:remote`는 `drizzle`의 미적용 마이그레이션을 운영 D1에 적용합니다.
 기존 데이터 이전은 별도 작업입니다. 원장 계정 초기화와 기존 회원의 소셜
 로그인 연결도 운영 전환 전에 확인해야 합니다. 직원 계정은 서버의
-`app/lib/staff-access.ts`에 구글 이메일·역할·담당 강사를 사전등록합니다.
+`app/lib/staff-access.ts`에 역할·담당 강사를 지정하고, 구글 이메일은
+Cloudflare Secret `ORCA_STAFF_EMAILS`에 사전등록합니다.
 등록된 직원은 구글 인증 후 승인 없이 연결되며, 이메일 미정인 직원은
 등록 후 이용할 수 있습니다. 변경 전 직원 세션은 재로그인이 필요합니다.
 `deploy`는 새 Worker 코드를 Cloudflare에 올립니다.

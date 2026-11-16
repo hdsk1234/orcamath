@@ -8,8 +8,9 @@ import Naver from '@auth/core/providers/naver';
 import {readSocialSession} from './social-session';
 import {LOGIN_ORIGIN,loginAvailability,safeLoginReturn,validProvider,socialIdentityId,readCookie,authResponse} from './login-policy';
 import {bindSocialIdentity} from './login-identities';
-import {normalizeStaffEmail,provisionStaffLogin} from './staff-access';
+import {normalizeStaffEmail,provisionStaffLogin,loadStaffRegistrations} from './staff-access';
 const values=()=>env as unknown as Record<string,unknown>;
+export const staffRegistrations=()=>loadStaffRegistrations(values().ORCA_STAFF_EMAILS);
 export const socialLoginStatus=(includeTesting=true)=>loginAvailability(values()).map(p=>({...p,ready:p.ready&&(includeTesting||values()[p.id.toUpperCase()+'_LOGIN_PUBLIC_READY']!=='false'),review:values()[p.id.toUpperCase()+'_LOGIN_PUBLIC_READY']==='false'}));
 export const loginOrigin=()=>String(values().ORCA_LOGIN_ORIGIN??LOGIN_ORIGIN).replace(/\/$/,'');
 const secure=(origin:string)=>origin.startsWith('https:');
@@ -40,7 +41,7 @@ export function authConfig(request:Request):AuthConfig{
     const userId=await bindSocialIdentity(env.DB,id,account.provider,link);
     const emailVerified=account.provider==='google'&&profile?.email_verified===true&&!!normalizeStaffEmail(profile.email)&&normalizeStaffEmail(profile.email)===normalizeStaffEmail(user.email);
     const email=emailVerified?normalizeStaffEmail(profile?.email):user.email??'';
-    token.orcaId=await provisionStaffLogin(env.DB,{userId,identityId:id,provider:account.provider,email,emailVerified});
+    token.orcaId=await provisionStaffLogin(env.DB,{userId,identityId:id,provider:account.provider,email,emailVerified},undefined,staffRegistrations());
     token.identityId=id;token.provider=account.provider;token.emailVerified=emailVerified;
     token.name=user.name??'새 회원';token.email=email;delete token.picture;
    }

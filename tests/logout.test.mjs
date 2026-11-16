@@ -5,7 +5,7 @@ import {logoutResponse} from '../app/lib/logout.ts';
 function request(origin='https://orca.example',headers={}){return new Request(origin+'/api/logout',{method:'POST',headers:{origin,...headers}});}
 
 test('소셜 설정 없이 운영·로컬 로그인 쿠키와 계정 연결 쿠키를 종료한다',()=>{
- for(const origin of ['https://orca.example','http://localhost:5173']){
+ for(const origin of ['https://orca.example','http://localhost:5174']){
   const response=logoutResponse(request(origin));
   assert.equal(response.status,303);
   assert.equal(response.headers.get('location'),'/login');

@@ -6,7 +6,7 @@ import {reconcileCompanions} from './companions';
 import {reconcileScholarships} from './scholarships';
 import {reconcileRenewalInvoices} from './operations';
 import { env } from 'cloudflare:workers';
-import { getOrcaUser } from './social-auth';
+import { getOrcaUser, staffRegistrations } from './social-auth';
 import { canAccessStudent, visibleWorkspace, type Workspace, type Viewer, type Role } from './domain';
 export class AppError extends Error { constructor(public status:number,message:string){super(message);} }
 export function database(){if(!env.DB)throw new AppError(503,'데이터 저장소를 연결하는 중입니다.');return env.DB;}
@@ -19,7 +19,7 @@ export async function identity(){
  if(!['admin','manager','teacher','assistant','student','parent'].includes(m.role))throw new AppError(403,'이 계정의 이용 권한이 중지되었습니다.');
  const owner=await db.prepare('SELECT owner_id FROM workspaces WHERE id=?').bind(m.workspace_id).first<{owner_id:string}>();
  if(m.role==='admin'&&owner?.owner_id!==user.userId)throw new AppError(403,'원장 계정의 권한을 확인해 주세요.');
- if(!staffLoginMatches(user,m))throw new AppError(403,'사전등록된 구글 이메일로 다시 로그인해 주세요. 직원 이메일이 미정이면 먼저 등록이 필요합니다.');
+ if(!staffLoginMatches(user,m,staffRegistrations()))throw new AppError(403,'사전등록된 구글 이메일로 다시 로그인해 주세요. 직원 이메일이 미정이면 먼저 등록이 필요합니다.');
  if(user.email)await db.prepare('UPDATE memberships SET email=? WHERE user_id=? AND (email IS NULL OR email<>?)').bind(user.email,user.userId,user.email).run();
  const {workspace}=await loadWorkspace(m.workspace_id);let explicit:string[]=[];try{const ids=JSON.parse(m.student_ids);if(Array.isArray(ids))explicit=ids.filter((id:unknown)=>typeof id==='string');}catch{}
  return {viewer:{userId:user.userId,name:m.name,role:m.role,studentId:m.student_id,email:user.email||m.email||'',teacherId:m.teacher_id,studentIds:assignedStudentIds(m.role,m.teacher_id,explicit,workspace.students)} satisfies Viewer,workspaceId:m.workspace_id};

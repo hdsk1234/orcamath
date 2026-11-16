@@ -4,26 +4,45 @@ import type {Role} from './domain.ts';
 export type StaffRegistration={name:string;role:'admin'|'manager'|'teacher';teacherId:string|null;email:string|null};
 export const STAFF_REGISTRATIONS:readonly StaffRegistration[]=[
  {name:'김한조',role:'admin',teacherId:null,email:null},
- {name:'박상우',role:'manager',teacherId:null,email:'hdsk123489@gmail.com'},
- {name:'어동선',role:'teacher',teacherId:'eo',email:'dongsun.eo@gmail.com'},
+ {name:'박상우',role:'manager',teacherId:null,email:null},
+ {name:'어동선',role:'teacher',teacherId:'eo',email:null},
  {name:'강신의',role:'teacher',teacherId:'kang',email:null},
  {name:'송서균',role:'teacher',teacherId:'song',email:null},
  {name:'변지석',role:'teacher',teacherId:'byun',email:null},
 ];
+// The secret maps known staff names to verified Google email addresses.
+// Missing or malformed configuration grants no staff access.
+export function loadStaffRegistrations(raw:unknown):readonly StaffRegistration[]{
+ if(typeof raw!=='string'||!raw.trim())return [];
+ try{
+  const emails=JSON.parse(raw);
+  if(!emails||typeof emails!=='object'||Array.isArray(emails))return [];
+  if(Object.keys(emails).some(name=>!STAFF_REGISTRATIONS.some(staff=>staff.name===name)))return [];
+  const seen=new Set<string>();
+  return STAFF_REGISTRATIONS.map(staff=>{
+   const value=emails[staff.name];
+   if(value===undefined||value===null)return {...staff};
+   const email=normalizeStaffEmail(value);
+   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||seen.has(email))throw Error('Invalid staff configuration');
+   seen.add(email);
+   return {...staff,email};
+  });
+ }catch{return [];}
+}
 export const normalizeStaffEmail=(email:unknown)=>typeof email==='string'?email.trim().toLowerCase():'';
 export const isRegisteredStaffRole=(role:string)=>['admin','manager','teacher'].includes(role);
-export function registeredStaff(provider:unknown,email:unknown,verified:unknown,registrations=STAFF_REGISTRATIONS){
+export function registeredStaff(provider:unknown,email:unknown,verified:unknown,registrations:readonly StaffRegistration[]=[]){
  if(provider!=='google'||verified!==true)return undefined;
  const normalized=normalizeStaffEmail(email);
  return normalized?registrations.find(s=>s.email&&normalizeStaffEmail(s.email)===normalized):undefined;
 }
-export function staffLoginMatches(user:{provider?:string;email:string;emailVerified?:boolean},member:{role:string;teacher_id:string|null}){
+export function staffLoginMatches(user:{provider?:string;email:string;emailVerified?:boolean},member:{role:string;teacher_id:string|null},registrations:readonly StaffRegistration[]=[]){
  if(!isRegisteredStaffRole(member.role))return true;
- const expected=registeredStaff(user.provider,user.email,user.emailVerified);
+ const expected=registeredStaff(user.provider,user.email,user.emailVerified,registrations);
  return !!expected&&expected.role===member.role&&expected.teacherId===member.teacher_id;
 }
 type Member={user_id:string;workspace_id:string;role:Role|'blocked';name:string;email:string|null;student_id:string|null;teacher_id:string|null;student_ids:string};
-export async function provisionStaffLogin(db:D1Database,login:{userId:string;identityId:string;provider:string;email:string;emailVerified:boolean},now=new Date().toISOString(),registrations=STAFF_REGISTRATIONS){
+export async function provisionStaffLogin(db:D1Database,login:{userId:string;identityId:string;provider:string;email:string;emailVerified:boolean},now=new Date().toISOString(),registrations:readonly StaffRegistration[]=[]){
  const staff=registeredStaff(login.provider,login.email,login.emailVerified,registrations);
  if(!staff)return login.userId;
  const email=normalizeStaffEmail(login.email);
