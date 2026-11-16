@@ -36,7 +36,8 @@ test('과거 차수 환불은 현재 새 차수를 종료시키거나 새 수납
 test('입금확인 취소는 새 수업 활동이 없을 때만 전 차수로 복원하며 과거 지급액을 보존한다',()=>{
  const w=fixture();confirm(w);pay(w,staffDues(w).find(r=>r.cycleNumber===1));const i=w.operations.invoices[0];run(w,{operation:'voidReceipt',studentId:'s',invoiceId:i.id,receiptId:'receipt',reason:'입금 확인 오류'});assert.equal(w.students[0].billing.cycleNumber,1);assert.equal(w.students[0].billing.paidOut,490000);assert.equal(w.students[0].billingHistory.length,0);confirm(w,'again');w.students[0].billing.sessions[0].status='completed';assert.throws(()=>run(w,{operation:'voidReceipt',studentId:'s',invoiceId:i.id,receiptId:'again',reason:'오류'}),/활동/);
 });
-test('급여 미설정 때 실제 조교비와 지급대기는 0, 가상 통계에만 100만원을 유지한다',()=>{
+test('급여 미설정 때 실제 조교비와 지급대기는 0, 가상 통계에만 100만원을 유지한다',t=>{
+ t.mock.timers.enable({apis:['Date'],now:new Date(now)});
  const w=fixture();assert.equal(monthlyExpenses(getOperations(w),'2026-10').assistant,0);assert.equal(monthlyExpenses(getOperations(w),'2026-10',true).assistant,1000000);assert.equal(staffDues(w).filter(r=>r.kind==='salary').length,0);
  run(w,{operation:'staffSalary',name:'조교 예시',userId:'assistant-id',monthly:600000,startMonth:'2026-10',dueDay:15});const r=staffDues(w,'2026-10-20').find(r=>r.kind==='salary');assert.equal(r.balance,600000);pay(w,r);assert.equal(monthlyExpenses(getOperations(w),'2026-10').assistant,600000);assert.equal(staffDues(w).find(r=>r.kind==='salary').balance,0);assert.equal(staffOwnDues(w,{...owner,role:'assistant',userId:'assistant-id'}).length,1);assert.equal(staffOwnDues(w,{...owner,role:'assistant',userId:'other'}).length,0);
 });

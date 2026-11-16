@@ -1,4 +1,4 @@
-export const LOGIN_ORIGIN='https://orca-math-learning.sharp-goby-9066.chatgpt.site';
+export const LOGIN_ORIGIN='https://orca-math.hdsk123489.workers.dev';
 export const LOGIN_PROVIDERS=[{id:'google',name:'구글'},{id:'kakao',name:'카카오'},{id:'naver',name:'네이버'}] as const;
 export type LoginProvider=typeof LOGIN_PROVIDERS[number]['id'];
 export const validProvider=(v:unknown):v is LoginProvider=>LOGIN_PROVIDERS.some(p=>p.id===v);

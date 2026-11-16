@@ -1,5 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+  "account_id": "a19cd1325a010b1ef93ac32a23f79d83",
   "name": "orca-math",
   "main": "worker.ts",
   "compatibility_date": "2026-05-15",
@@ -21,5 +22,11 @@
   ],
   "observability": {
     "enabled": true
+  },
+  "vars": {
+    "ORCA_LOGIN_ORIGIN": "https://orca-math.hdsk123489.workers.dev",
+    "GOOGLE_LOGIN_ENABLED": "true",
+    "KAKAO_LOGIN_ENABLED": "false",
+    "NAVER_LOGIN_ENABLED": "false"
   }
 }
